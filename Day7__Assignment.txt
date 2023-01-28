@@ -1,0 +1,43 @@
+Day 7 Assignment - 
+
+1. What is Statically typed and Dynamically type programming language?
+Ans - Statically - Language which are require to mention type of datatype of any variable they are statically typed, if we don’t provide datatype that will through a compile time error.
+		Dynamically - Languages which do not require to mention the datatype and that intelligently assign the datatype at the time of runtime.
+
+2. What is the variable in Java?
+Ans - A variable in java is a location in the memory which stores the value in it. 
+		example int varName = “Value of the Variable”;  - it will create a memory location named varName and its value will be “Value of the Variable”
+
+3. How to assign a value to a variable?
+Ans - We assign a value to a variable using Assignment Operator.
+		Ex - int num1 = 1; here “=“ is an assignment operator.
+
+4. What are primitive data types in Java?
+Ans - Primitive datatypes are those basic datatypes from which all other datatypes are constructed. In Java there are 8 primitive data types.
+		Integer - 1. Byte, 2. Short, 3. Int, 4. Long 
+		Real numbers - 1. Float, 2. Double
+		logical - 1. Boolean (true OR false)
+		character - 1. Char (Java follows UTF-16 formatting so it consists of 2 bytes.)
+
+5. What are the Identifiers in java?
+Ans -Identifiers is a name give to any class, variable, package or method.
+ 
+6. List the operators in Java?
+Ans -   1. Arithmetic Operators - +, -, /, *, %
+		2. Relational Operators ==, <, >, <=, >=, !
+		3. Logical Operators &&, ||, !
+		4. Assignment Operators =
+		5. Unary Operators
+		6. Bitwise Operators
+
+7. Explain about Increment and decrement operators and give an example.
+	Increment operator is used to add one (1) to any variable it is assigned (ex- a++) to and decrement is used to subtract. (ex- a—).
+	They are of two types- Post and Pre.
+	Post Incr/Decr - In Post Increment (a++) the value of a will be assigned first and then its value will be incremented 
+	Whereas in Pre Increment (++a) the value will be incremented first and then assigned.
+
+	example —
+	
+	int a = 5;
+	int b = a++;
+	here value of a is 6 and value of b is 5 only because the value of a was assigned already even before incrementing.
