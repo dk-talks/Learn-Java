@@ -1,0 +1,70 @@
+Day 8 Assignment 
+
+1. What are the conditional operators in Java?
+Ans - When a condition consists of multiple boolean expressions, they are used. Use
+	  conditional operators to combine two expressions, such as when we wish to print
+	  a number only if it is larger than 2 and less than 5, respectively.
+
+		We have 3 types of conditional operators -
+		● Logical-and Operator(&&)
+		● Logical-or Operator(||)
+		● Ternary operator(?:)
+
+2. What are the types of operators based on the number of operands?
+Ans - Two types of operators - Unary and Binary.
+	Unary - Performs operation on single operand. Ex (++, --)
+	Binary - Performs operation on two operands. Ex (==, <, > etc)
+
+3. What is the use of Switch case in Java Programming?
+Ans - Switch case is needed when we actually know the comparison value before only. 
+	It makes it simpler when we have multiple cases rather than using if-else statements.
+	ex - We can use it on Day Names, Name of months etc.
+
+4. What is the priority level of arithmetic operators in Java?
+Ans - Priority level is Parenthesis > Exponents > Division/Multiplication > Addition/Subtraction > Modulus.
+
+5. What are conditional statements and their use in Java?
+Ans - Conditional statements are some block of code to decide based on some given condition.	
+	Their use is to make decision in programming.
+
+6. What is the syntax of if else statement?
+Ans syntax is --> if(some condition) {
+				//code if condition is true
+			   } else {
+				//code if condition is false
+			   }
+7. What are the three types of iterative statements in Java?
+Ans - Three type of iterative statements in Java are - 
+	1. For loop
+		syntax - for(initialisation; condition; update) {
+				//block of code
+			    }
+	2. While loop
+		syntax - while(condition) {
+				//block of code
+				update here (otherwise loop will become infinite)
+			    }
+				
+	3. Do-while loop
+		syntax - do {
+				//block of code
+				update here (otherwise loop will become infinite)
+			    } while (condition);
+
+8. Write down the difference between for loop and do-while loop?
+Ans - For loop - 
+		Condition is checked before the execution of the code (entry-controlled loop).
+		It might be possible it never runs the block of code due to condition.
+	 While loop -
+		Fist the execution happens and then the condition is checked (exit-controlled loop)
+		This loop will run at-least once even if condition is false. 
+
+9. Write a program to print numbers from 1 to 10.
+Ans - 
+	for(int num = 1; num<11; num++) {
+		System.out.println(num);
+	}
+
+	
+
+		
