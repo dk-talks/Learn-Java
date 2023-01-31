@@ -1,0 +1,50 @@
+Day 10 Assignment 
+
+1. How to create an object in Java?
+Ans - It is create using new keyword
+	syntax - Test obj = new Test();
+	where Test - name of the class
+		  obj - name of the object
+
+2. What is the use of 'new' keyword in Java?
+Ans -
+	'new' keyword in java is used to create a new object of a class
+	or we can say it instatiates a class and allocate a memory of that object. 
+	And also it returns the reference of that allocated memory.
+
+3. What are the different types of variables in Java?
+Ans - 
+	There are three types of variables in Java.
+	1. Local Variable - These kinds of variables have a local scope to which block or method they are defined.
+	   and are only created when their method block is running. These are stored in the stack of their method.
+
+	2. Instance Variable - In simple terms these are properties of a class. 
+	   Will only be created when the instance (object) of its class is created and destroyed with it.
+	   They have different values for every new object created. And are declared inside class but outside any method.
+
+	3. Static Variables -  These variables are special one. They can be accessed without even creating the 
+		instance (object) of a class. And having life of entire run of the program.
+
+4. What is the difference between Instance & Local variable?
+Ans - 
+	Instance variable stays in heap memory whereas Local lives in stack memory of its method.
+	Instance variable's scope is same as its class but Local variable is block scoped.
+	Instantiate on object creation of the class but local variable is available until its block of code (method) is running.
+
+5. In which area memory is allocate for instance variable and local variable ?
+Ans - 
+	Memory to Instance variables is allocated into the Heap memory whereas local variables are stored into stack memory.
+	
+6. What is method overloading ?
+Ans - 
+	This means method with same name can be used with different parameter names OR different parameter data types.
+	
+	example -     void run(int meters) {
+
+				 }
+					
+				void run(float meters) {
+	
+				}
+		
+			Both the methods are valid and will work perfectly fine.
