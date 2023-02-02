@@ -1,0 +1,46 @@
+				Day 13 Assignment 
+
+1. What is the default values of arrays for different data types?
+Ans	   a.  Int --> 0	
+		b. String --> null
+		c. Boolean --> false
+		d. User-defined --> null
+		e. Double --> 0.0
+
+2. Can you pass negative numbers is array size?
+Ans - No, we cannot otherwise it will throw 'NegativeArraySizeException:'
+
+3. Where does array are stored in jvm memory?
+Ans - Since Arrays are reference types. So they are stored into the heap memory.
+
+
+4. What are the disadvantages of an array?
+Ans a. Arrays are Homogenous (only similar types of data can be stored into an array).
+	b. Their size is fixed after declaration. It cannot be changed.
+
+5. What is an anonymous array in Java? Give example.
+Ans - An array which does not have a name is called an anonymous array.
+	Ex - I can give an anonymous array as an argument in a method which accepts array as parameter.
+	
+	void add(int[] numbers) {
+	
+	
+	};
+
+	So, I can provide anonymous array here like - add(new int[]{4,54,6,7,8,69});
+
+6. What are the different ways to traverse an array in Java?
+Ans - We can use either for loop or Enhanced for-each loop (also called Enhanced for loop) to traverse into an array.
+		Enhanced for loop is more preferred because that's what it was made for.
+
+7. What is the difference between length and length() method? Give example.
+
+Ans - length is a property of array which gives the length of an array.
+	Example int[] nums = {1,2,3,4,5};
+		so here nums.length will return 5.
+	
+	Whereas length() is a method of String which returns number of characters in a string.
+	Example String name = "Dinesh";
+		so here name.length() will return 6.
+
+	 	
