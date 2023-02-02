@@ -1,0 +1,47 @@
+       				Day 12 Assignment:-
+
+1. What do you mean by an array?
+Ans -  An array is a collection of similar types of data which can be accessed using its index number.
+		In java, array can store both primitive and non primitive types of data.
+
+2. How to create an array?
+Ans - In java array is an object type, to create an array these are the syntaxes -
+		int[] arr1 = {2,3,4,5}; // if we have the data at the time of creation.
+					OR
+		int[] arr2 =  new int[5]; // here 5 is the number of elements inside this array.
+		To create 2D array use —> int[][] arr3 = new int[4][4];
+
+3. Can we change the size of an array at runtime?
+Ans - No.
+
+4. Can you declare an array without assigning the size of an array?
+Ans - Yes we can, but before using it we have to initialise it. Otherwise it will give compile time error (array is not initialised).
+
+5. What is the default value of an array?
+Ans - Default value of array types - 
+		int array —> 0
+		string array —> null
+		boolean array —> false
+		double array —> 0.0	
+		user-defined array —> null
+
+6. What is a 1D array with an example?
+Ans - A 1-dimensional array is a kind of array which do not have any nested array inside an array or it has only one row and multiple columns.
+	example - int[] arr1 = {1,2,3,4,5,6,7}; // here you will not see any nested arrays inside arr1.
+
+7. Write a program on a 2D array.
+Ans - A program on a 2D array which initialise a 2D array and print its data on to the console.
+	
+		int[][] marks = { {10,11,12},
+						   {12,65},
+						   {56,100, 99.9} 
+							};
+
+		// we will use enhanced for loop here
+	
+		for(int parent[]: marks) {
+			for(int child: parent) {
+				System.out.print(chid + “ “);
+			}
+			System.out.println();
+		}
