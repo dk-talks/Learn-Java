@@ -1,0 +1,44 @@
+			Day 14 Assignment
+
+1. What is a String in Java?
+
+Ans - In Java, String is an inbuilt class which contains collection of characters
+	   enclosed in double quotes (" "). By nature strings are immutable.
+
+2. Types of strings in java are.
+
+Ans - There are two types of String in Java.
+	a. Immutable String - which cannot be changed. If tried to change, it will create
+		a new object and original string will remain intact. 
+		These types of strings are created using String class.
+
+	b. Mutable String - Can be changed in future after initialization. These types of strings
+		are created using StringBuilder OR StringBuffer classes.
+
+3. In how many ways you can create string object in Java?
+
+Ans - Broadly speaking, There are two ways to create string object in java.
+	  1. Without using new keyword
+		ex - String name = "Dinesh Sharma";
+		here the object will be created into String Constant pool which stays inside heap memory.
+		and duplicates are not allowed here.
+
+	  2. With using new keyword
+		ex - String name = new String("Dinesh Sharma");
+		here the object will be created outside the SCP inside the heap memory and duplicates are allowed.
+		
+	  We can also create String using array of characters.
+		example - char ch[] = {'d', 'I', 'n', 'e', 's', 'h'};
+				   String name = new String(ch);
+
+4. What is a String Constant Pool?
+Ans - it is a special area inside the heap memory where all the Strings declared in the program are stored.
+	  Duplicate strings are not allowed in this area.
+
+5. What do you mean by mutable and immutable objects?
+Ans - Mutable objects means if once they are created, their values cannot be changed in the future 
+	  on the other hand in case of Immutable objects their values can be changed even after creation.
+
+6. Where exactly is the String Constant Pool located in the memory?
+Ans - Heap memory.
+
