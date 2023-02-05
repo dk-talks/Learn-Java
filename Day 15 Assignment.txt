@@ -1,0 +1,95 @@
+		Day 15 Assignment
+
+1. Write a simple String program to take an input from user.
+
+Ans - import java.util.Scanner;
+	 class HelloWorld {
+    	 	public static void main(String[] args) {
+	        Scanner in = new Scanner(System.in);
+     		   System.out.print("Please Enter Your Sring here: ");
+        	   String userResponse = in.nextLine();
+	        System.out.println("You Entered: " + userResponse);
+		}
+	}
+
+2. How do you concatenate two strings in java? Give example.
+
+Ans - There are two ways to concatenate two strings in Java.
+	1. Concat methods. - Concat method of Strings can only concat one string at a time and it always creates a new object
+		into the heap memory.
+		example - String name = "Dinesh";
+				String fullName = name.concat("Sharma"); // here full name is a new object and does not change the old object.
+
+	2. + operator - + operator is used to concatenate two or more strings. And It will only create the new object inside the 
+		String constant pool when there is no inbuilt method, reference variable or new keyword is used.
+	
+		example - String name = "Dinesh";
+				String fullName = name + " Sharma"; // this will create a new object outside SCP (String Constant Pool).
+			but, String fullName1 = "Dinesh" + "Sharma"; will create new object inside SCP.
+
+
+3. How do you find the length of a string in java? Explain with example.
+
+Ans - To find length of a string we use length() method.
+	Example - String s1 = new String("Hello There!");
+			System.out.println("Length of s1 is: " + s1.length()); // it will print - "Length of s1 is: 12"
+
+4. How do you compare two strings in java? Give example.
+
+Ans - There are two ways to compare two strings in java.
+	1. Using == Operator - This checks if two variables are pointing to same object inside heap memory.
+	2. Using .equals() method - This checks the actual content present in the string.
+
+		example - String s1 = "Hey!";
+				String s2 = new String("Hey!");
+		So. s1==s2 will return false because they are pointing to two different objects.
+		But s1.equals(s2); will return true because their content is same.
+
+5. Write a program to find the length of a string "refrigerator".
+
+Ans - 	String item = "refrigerator";
+		System.out.println("Length of item is: " + item.length());
+
+6. Write a program to check if the letter 'e' is present in the word 'Umbrella'.
+
+Ans - To solve this problem I used a method of char (Character.compare(int x, int y)
+
+	String item = "Umbrella";
+     boolean isPresent = false;
+
+     for(int i=0; i<item.length(); i++) {
+        if( Character.compare(item.charAt(i), 'e') == 0 ) {
+            System.out.println("Character 'e' is present at index: " + i);
+            isPresent = true;
+        }
+     }
+     if(isPresent==false) {
+        System.out.println("Character 'e' is not present in this string!");
+     }
+
+
+7. Write a program to delete all consonants fro the string "Hello, have a good day".
+
+Ans - // program to delete all consonants from a string.
+
+         String message = "Hello, have a good day";
+
+         StringBuffer convertedMessage = new StringBuffer();
+
+         char[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+
+         for (int i = 0; i < message.length(); i++) {
+
+            if(message.charAt(i)>='a' && message.charAt(i)<='z' || message.charAt(i)>='A' && message.charAt(i)<='Z') {
+                for (int j = 0; j < vowels.length; j++) {
+                    if(vowels[j] == message.charAt(i)) {
+                        convertedMessage.append(vowels[j]);
+                    }
+                }
+            } else {
+                convertedMessage.append(message.charAt(i));
+            }
+            
+         }
+
+         System.out.println(convertedMessage);
