@@ -1,0 +1,56 @@
+            Day 18 Assignment
+
+Q.1 - Why do we need static keyword in Java? Explain with example.
+
+Ans 1 - Generally static keyword in java is used to manage memory. Also using static keyword we can access methods and variables without creating object of the class.
+    Lets Understand with example.
+    
+    class Demo {
+        public static void main(String[] args) {
+            // here I can directly access static variable schoolName but have to create object of School class for the variable studentName
+            School.schoolName; 
+            
+            School obj = new School();
+            obj.studentName;
+        }
+    }
+    
+    
+    class School {
+        String studentName;
+        static String schoolName = "PW Skills";
+    }
+    
+    
+    
+Q. 2 --> What is class loading and how does the java program actually loads.
+
+Ans 2 --> Class is loaded by classLoader which is a part of Java Runtime Environment and loads class into java virtual machine in a dynamic way. All classes are not
+            loaded at once but loaded on demand by the application.
+            
+   
+Q.3 --> Can we mark a local variable as Static?
+Ans 3 - No, A local variable cannot be a static variable.
+
+Q.4 --> Why is the static block is executed before the main method in Java?
+Ans - Because at the time of classLoading, the compiler stores all the static variables into the memory even before object creation.
+
+Q.5 --> Why is a static method also called a class method?
+Ans - Because a static method can be directly accessed by the class and no need to create its object. That is why it is also called class method.
+
+Q.6 --> What is the use of static block in java.
+Ans - Static block in java is used to initilize all the static variables and call all the static methods and store into the memory.
+
+Q.7. --> What is the difference etween static and instance variable?
+Ans - Static variable need not to make object of the class, they can be directly access with class nae only whereas instance variable needs the object.
+        Static variables are created with the loading of the class by JRE but instance variable takes up memory only when their object is created.
+        
+Q.8 --> Difference between Static and non static member?
+Ans - Static members are those variables or methods which do not need any object of the class to be accessed and they are created with the loading of class and
+        destroyed after the program stops.
+        Instance members are those which require to create object of the class to access them and they are loaded once the object is created.
+        
+    
+
+       
+       
