@@ -6,4 +6,99 @@ Ans - Encapsulation in Java is the process by which data inside a class can be p
   It is also called Data Hiding because Encapsulation is in-fact used for Data Hiding from outside classes.
   
   
-Q. 2 - What are the important features of Encapsulation
+Q. 2 - What are the important features of Encapsulation?
+Ans - a. Main important feature of Encapsulation is Data Hiding. Any other class cannot manipulate data of encapsulated class without its will.
+      b. Helpful in creating complex programs.
+      
+      
+Q. 3 - What are getters and setters in java? Explain with example.
+Ans - Getters - Such methods in class which are used to get the values of a particular object for another class where it's object is created.
+      Setters - Such methods in class are used to set the values of class members of a particular object.
+      
+      example - 
+      public String getStuName() {
+        return stuName;
+      }
+
+      public void setStuName(String stuName) {
+        this.stuName = stuName;
+      }
+
+Q. 4 - What is the use of 'this' keyword? Explain with example.
+Ans - 'This' keyword is used while setting setting value of a class member for a particular object of the class. And it is only neccessary when the 
+       name of local variable ( argument inside setter method) and instance variable's name is same.
+            
+       for example - 
+            int rollNo;
+            
+            public void setRollNo(int rollNo) {
+                  // if I write
+                  rollNo = rollNo; // here java will get confuse and will give preference to local variable.
+                  // that is why we have to use 'this' keyword which denote rollNo for that particular object of that class.
+                  this.rollNo = rollNo;
+            }
+            
+
+Q. 5 - Advantages of Encapsulation.
+Ans - 1. Used to hide information for better security of code.
+      2. Easier to understand code, other developer can easily understand.
+      3. Easier to maintain and can build complex programs easily.
+     
+Q. 6 - How to achieve Encapsulation in Java? Give Example.
+
+Ans - All members of class should be private and define getters and setters methods to access and manipulate data with restrictions.
+
+      Step by step guide to achive encapsulation with below example.
+      
+      //create your classes first.
+      
+      class DemoEncapsulation {
+            public static void main(String[] args) {
+            
+                  // creating object of student class defined below
+                  Student stuObj = new Student();
+                  
+                  // to set value of this object user can only use the setter methods and cannot directly manipulate values.
+                  // that is the main purpose of Encapsulation in Java
+           
+                  stuObj.setStudentData("Dinesh Sharma", "7", 'A');
+                  
+                  // to get this data, user have to use the getter methods, He can not directly access them, becuase members are private.
+                  
+                  String stu1Name = stuObj.getStuName();
+                  // similarily can access all other members.
+                  
+            }
+      }
+      
+      class Student {
+            // your instance variables must be private to achive Encapsulation
+            private String stuName;
+            private int roll;
+            private char section;
+            private static String schoolName;
+            
+            // initialize your static variables here
+            static {
+                  schoolName = "The Rajasthan International School, Kotputli";
+            }
+            
+            // define your getters and setters here so that other class can only get and set data from these.
+            // if you dont define these than this class will be of no use.
+            
+            public String getStuName(){
+                  return stuName;
+            }
+            //similarily define all getters methods or you can automatically create using source Action in your IDE.
+            
+            // setters are as follows, you can also set in one method and also can make different method for each member
+            
+            public void setStudentData(String stuName, int roll, char section) {
+                  this.stuName = stuName;
+                  // here this.stuName --> stuName value of that particular object who will call this method.
+                  // and stuName --> It is the local variable passed as argument.
+                  this.roll = roll;
+                  this.section = section;
+            }
+      }
+      
