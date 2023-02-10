@@ -1,0 +1,9 @@
+      Day 19 Assignment (Encapsulation)
+
+Q.1 - What is Encapsulation in Java? Why is it called Data Hiding?
+Ans - Encapsulation in Java is the process by which data inside a class can be protected from other classes by making their variables private and 
+  they only can be accessed through methods using getters and setters.
+  It is also called Data Hiding because Encapsulation is in-fact used for Data Hiding from outside classes.
+  
+  
+Q. 2 - What are the important features of Encapsulation
