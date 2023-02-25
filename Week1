@@ -1,0 +1,108 @@
+    20th Feb Week 1 Assignment
+    
+    
+Q.1 - What is Inheritence in Java?
+Ans.1 - In Java Inheritence simply means that one class can inherit all the properties and behaviours of another class.
+  For example - class Animal {
+                  String name;
+                  void run() {
+                    System.out.println("the animal is running!");
+                  }
+                }
+                
+                and I will make another class named Tiger which will inherit all the functionalities of Animal class.
+                
+                class Tiger extends Animal {
+                  // here the name property and run method is already inherited
+                }
+                Tiger t1 = new Tiger();
+                t1.run(); // I can directly access it here.
+           
+Q.2 - What is SuperClass and SubClass in Java?
+Ans 2 - A Super Class is that class whose properties and behavious are being inherited to another class or this class is also called the parent class.
+        A Sub class is also called a child class, this class can inherit the properties and behavious of another class which is its parent class.
+        
+Q.3 - How is Inheritence achieved in Java.
+Ans 3 - I have give its example in Ans.1.
+
+Q.4 - What is PolyMorphism?
+Ans.4 - Polymorpismm is a Greek word that means 'many forms'. When we have many classes that are related to each other using inheritence. then we can use
+        the concept of polymorphism for code reusablity.
+        
+        Example - 
+        
+        class Animal {
+          void animalSound() {
+            System.out.println("Animal makes sound");
+          }
+        }
+        // now I will make two actual animals classes that will inherit this Animal class
+        
+        class Tiger {
+          void animalSound() {
+            System.out.println("Tiger says: Rorrrr");
+          }
+        }
+        
+        
+        class Cat {
+          void animalSound() {
+            System.out.println("Cat says: Meouwww");
+          }
+        }
+        
+        Now inside main method of the main class I will create the objeccts
+        
+        class Launch {
+          public static void main(String[] args) {
+            Animal a1;
+            // Even for the Tiger and Cat classes, I will store the reference using the Animal class only to implement polymorphism and improve code reusability
+            a1 = new Tiger(); // we can do this because a parent class reference can store the object of a child class
+            a1.animalSound();
+            
+            a1 = new Cat();
+            a1.animalSound();
+            
+          }
+        }
+        
+Q.5 - Differentiate betweeen method overloadind and method overriding.
+Ans.5 - 
+    Method Overloading - Means same named method can be defined with different types of paramenters or differnt types of return types.
+    ex void run(){} & void run(String athleteName){} // both are acceptable
+    
+    Method Overriding - A method's body can be changed according to the requirement inside the child class. As explaned in Q.4.
+    
+    
+Q. 6 - What is an abstraction? Explain with example.
+Ans. 6 - When method body of a class is necessarily to be overriden by its child class then we can declare that method and that class as an abstract.
+        In Abstraction we do not define the body of that method inside abstarct class to reduce code repetition. Abstract means Incomplete.
+        
+        example - abstract class Animal {
+                    abstract void animalSound(); // here we cannot define a genereal body so we kept it as abstract method.
+                  }
+                  
+  
+Q.7 - What is the difference between an abstract method and a final method in Java? Explain wit example.
+Ans.6 - An Abstract method in Java do not have a body, its an empty method which has to be necessarily declared inside the child class Whereas
+        a Final method cannot be overridden by any child class.
+        
+Q.8 - What is the final class in Java?
+Ans.8 - Final class in Java do not participate in Inheritence becuase they have been declared Final and no any chages can be performed on such classes.
+        No class can extend Final classes
+        Examples of some inbuilt final classes are String, StringBuffer etc.
+        
+        
+Q.9 - Differentiate between Abstraction and Encapsulation.
+Ans.9 - Abstraction is used to reduce the repetition of code and whereas Encapsulation is used to make the class more secure and hides its data from outside
+        world using private Access Modifiers.
+        
+Q.10 - Differentiate between runtime and compile time polymorphism. Explain with example.
+Ans.10 - Compile time polymorphism is achieved using method overloading, also called Static Polymorphism. Which method will be called, at the compile time,
+          compiler will be able to differntiate.
+         
+         Whereas Runtime polymorphism is achieved using method overiding, which cannot be differentiated at the the time of compie time. It is also called 
+         Dynamic polymorphism.
+         
+                
+                
