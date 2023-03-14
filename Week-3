@@ -1,0 +1,47 @@
+    Exception Handling Week 3 Assignment
+    
+Q.1- Explain different types of errors in Java.
+Ans - There are three types of errors in Java.
+  1. Syntax error - This error occures when there is some syntactical error in the code and this is known at the compile time only
+      Code does not even compile when there is systax errror.
+      
+  2. Logical error - When we do not get the desired results as we expected, this is called Logical error. Usually occurs when there is some
+        logical isssue in the code.
+        
+  3. Runtime Error - These kinds of errors are unexpected exceptions that are not caught by the compiler and they occur suddenly and need to be 
+      handled seprately, for expample - deviding a number by zero, passing invalid value, trying to access out of index from an array etc.
+      
+      
+Q.2 - What is Exception in Java?
+Ans 2 - An Exception is understood by its name "Exception", Due to some error, the normal flow of the code is disrupted, example - when there is a line
+      in code that devides a number by zero, it return infinite and its an exception so it will stop the execution of the code and crash the application.
+      Exceptions are Runtime error and are considered dangerous.
+      
+  
+Q.3 - How can you handle exception in Java? Give example.
+Ans 2 - To handle exception in java, We can use try catch block
+    Example - 
+        
+        suppose we have a critical statement of accessing out of bound value from an array, so we will put it in try block and if exception will occur
+        it will throw the exception and will be caught by the catch block.
+        
+        int arr[] = {1,2,3};
+        try {
+          System.out.println(arr[4]) // this is a critical statement because index no. 4 does not exist in array arr.
+        }
+        catch(Exception error) {
+          System.out.println("An Error occured" + error.message())
+        }
+        
+Que 4 - Difference between Exceptions and Errors in Java.
+Ans - Both are Subclass of Throwable class.
+      Exceptions are both checked and unchecked (checked exceptions - those which are know to compiler and must be handled otherwise it will give compile
+        time error. for ex - All exception except Runtime Exception are checked like - IOException, SQlException etc)
+      Unchecked - They are not know to compiler and if you handle it that's good, otherwise if this excepiton occurs the application will crash.
+      
+      Errors - These are errors (called unchecked exceptions) which most of the time occurs due to the lack of resources when mistakenly coded
+      by the developer ex - Stackoverflow, outOfMemory. (when programmer uses a infinite loop etc.
+      
+
+Q.5 - Can we use try witout finally of catch block??
+Ans - No
