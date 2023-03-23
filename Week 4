@@ -36,4 +36,4 @@ Q.7 - What are wait() and sleep() method in Java?
 Ans - Sleep(milliseconds) - This method send the thread to blocked state for a specific amount of time and It will surely come back to Runnable state
 		after that time. 
 		Whereas wait() method is different, when wait() method is called then the thread goes to blocked state until any other thread calls Notify()
-		or NotifyAll() to bring back those blocked threads to lock that resource.
+		or NotifyAll() to bring back those blocked threads to lock that resource. 
