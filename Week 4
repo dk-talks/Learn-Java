@@ -1,0 +1,39 @@
+
+		MultiThreading assignment
+		
+
+Q.1 - What is MultiThreading in Java? Why is it important?
+Ans - As the name suggest multithreading means more than one thread and thread is a light weight piece of code that needs to be executed.
+		It is important to manage the CPU's time cycle effectivly and utilize the resources and to make our application faster.
+		
+Q.2 - What are the benefits of using Multithreading?
+Ans - 1. To utilize and minimize the waste of resources.
+	  2. Make our applications faster.
+	  3. Good user experience.
+	  
+Q.3 - What is Thread in java?
+Ans - A thread is a line of execution and where ever this line of execution goes that part of code is executed and we can created many line of execution
+		in java.
+		
+Q.4 - What are two ways of implementing thread in Java?
+Ans 1. By extending the Thread class.
+	2. By implementing the Runnable method. ofcourse this will not create the thread, we have to explicitly create object of thread and assign it the
+		object of this Runnable class's object to that thread.
+		
+Q.5 - What is the difference b/w thread and process?
+Ans - Process - A process is reffered to an application running on an Operating System.
+	  Thread - A thread is a line of execution (piece of code) inside a process (program).
+	  
+Q.6 - How to create Daemon thread in Java?
+Ans - 	
+		First create a normal thread and just set it to a daemon thread before starting
+		Thread t1 = new Thread();
+		t1.setDaemon(true);
+		t1.start();
+		// Here t1 is a Daemon Thread.
+		
+Q.7 - What are wait() and sleep() method in Java?
+Ans - Sleep(milliseconds) - This method send the thread to blocked state for a specific amount of time and It will surely come back to Runnable state
+		after that time. 
+		Whereas wait() method is different, when wait() method is called then the thread goes to blocked state until any other thread calls Notify()
+		or NotifyAll() to bring back those blocked threads to lock that resource.
