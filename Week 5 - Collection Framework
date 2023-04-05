@@ -1,0 +1,57 @@
+
+   Assignmennt of Collection framework in Java
+   
+   
+1. What is the collection framework in Java?
+Ans - Collection framework in Java is a collection of interfaces and class which can store, delete, manipulate and retrieve data in large number.
+      They are Dynamic in nature, and can have homogenous as well as hetrogenious types of data in them.
+      
+ 2. What is the difference between ArrayList and LinkedList?
+ Ans - ArrayList - It is a type of collection which implements the List Interface. We can use index base accessing but manipulating data on index basis 
+        is not recommended because it has to shift every next element aside which is not optimized.
+       LinkedList - It is a type of collection which implements List as well as Deque interface, So it has the functionalities of both the interfaces. 
+       Data is stored in form of nodes. Here also order is maintained but only in the node, So If we want to manipulate index based item then it is 
+       optimized. Because only the node information will be updated and every next object is not shifted.
+       
+ 3. What is the difference between Iterator & ListIterator?
+ Ans - Iterator - It is used to iterator over any kind of collection inside the collection heirarchy.
+        example - Iterator it1 = arr1.iterator()
+                  while(it1.hasNext()) {
+                      System.out.println(it1.next())
+                  }
+                  
+       ListIterator - This iterator is only available for list based collections. And It has bi-directional functionality which is not available in 
+       iterator because it's cursor always remains in between the two elements of the list, so it can access Next() and Previous() elements.
+       
+4. What is the difference between Iterator and Enumeration?
+Ans - Iterator is available for all kinds of collection inside collection heirarchy and It is not thread-safe i.e If we use iterator on multiple thread
+        it can give issues.
+      Enumeration is only available in Vector, HashTable and not in all collections but It is thread-safe. It can be used on multiple threads simultanously
+      without causing any problem
+      
+5. What is the difference between List and Set?
+Ans - List and Set are interfaces inside the collection heirarchy.
+                     List                                                                                 Set
+        1. Ordered - Elements in list are ordered.                                      1. Elements are not ordered.
+        2. Duplicates - List allows duplicate values in them.                           2. Set does not allow duplicate values.
+        3. Index Based Accesing is allowed using get() method.                          3. Cannot access elements on basis of index and cannot even
+                                                                                           maniplate.
+        4. Mainly used to store data just for storage purpose and easy access.          4. Mainly used to store and perform operations on them like
+                                                                                           searching, sorting etc in very fast manner.
+                                                                                           
+6. What is the difference between HashSet and TreeSet?
+Ans - Both HashSet and TreeSet are part of Set interface. But differences are that HashSet has no particular order whereas TreeSet are ordered in 
+        sorted order because it used Binary SEarch tree for sorting. TreeSet does not allow null values whereas HashSet allows at most 1 null value 
+        because both do not allow duplicate values. HashSet performance is higher than treeSEt because of high processing in Treeset takes place to 
+        sort the elements.
+        
+7. What is the difference between Array and ArrayList?
+Ans -                           Arrays                                                                  ArrayList
+        1. Arrays are fixed sized                                               ArrayList are dynamic type, means we can add any amount of elements
+                                                                                without specifying its length.
+        2. Arrays are Homogenous in nature                                      ArrayList and Homogenous & hetrogenous in nature.
+        3. Limited functionality.                                               So many inbuilt method for CRUD operations.
+        4. It can store only primitive data types of data.                      Arraylist can store any object in them.
+       
+  
+    
