@@ -1,0 +1,24 @@
+                Maps & Generics assignment
+                
+1. What is a Map in Java?
+Ans 1 - A Map in Java is an interface which represents a collection of Key and Value Pair. This collection of a key and value pair is called an Entry.
+        Keys in maps are unique, they cannot be duplicate and both keys and values are of type Object.
+        
+2. What are the commonly used implementation of Map in Java?
+Ans - There are majorly four implementation of Map.
+        1. HashMap - HashMap stores key-value pair of object and here order of insertion is not guaranteed because behind the seen it uses hashing algorithm
+           to store data. Values can be duplicate here.
+        2. HashTable - It is almost similar to HashMap but in hashTable Null values are not allowed and it is thread safe.
+        3. TreeMap - It also stores the data in key-value pairs and data is sorted based on the keys in treeMap.
+        4. LinkedHashMap - Similar to hashMap but data's order is maintained here because it stores data in form of nodes and info is stored there to order them.
+        
+3. What are the difference between HashMap & TreeMap?
+Ans - HashMap - hashmap is an implementation of Map interface. Order of data is not  gauranteed here, because of less processing in it operations like addition,
+              deletion, updation takes place faster. works on hashing algorithm.
+      TreeMap - TreeMap is also an implementation of map interface. Order of data is maintained in sorted order based on the keys. behind the seen it uses Binary
+      sarch tree to sort the data. Because of high processing of data in sorting, it takes little bit more time to perform operations than HashMap.
+      
+4. How do you check if a key exist in a Map in Java?
+Ans - 
+
+
