@@ -35,5 +35,36 @@ Ans - To check if a key exists in a Map, first we have to iterate through the ma
               System.out.println("Yes key exists);
            }
         }
+        
+5. What are Generics in Java?
+Ans - Defining the type of data we will store inside any collection or map interface are called Generics. It gives our code compile time safety.
+  We even can create Generics in our own custom class too to give only the type we specify.
+  
+6. What are benefits of using Generics in Java?
+Ans - 1. Type safety - Using generics we can assure the type of data will be stored in our collection or any custom class's object's constructor.
+        this way there will be less chances of runtime errors in our application.
+      2. Code reusability - Using generics or code becomes more flexible and same piece of code can be used for different types and no need to write
+        different code for different types.
+      3. Abstraction - code becomes more abstrct and flexible.
+      4. Performance - Using generics can boost the performance of the application as they are implemented by the type - erasures. 
+          That means Generics information is erased at the time of runtime only and takes less memory hence increrase performance.
+          
+7. What is a Generic class in Java?
+Ans - In Java, a generic class is a class that can work with different types of objects. It is defined using one or more type parameters,
+      which are specified in angle brackets (< and >). These type parameters represent the type of objects that the class can work with.
+      
+8. What is a type paramenter in Java Generics.
+Ans - In Java, a type parameter is a placeholder for a specific type that is used in a generic class, interface, or method. 
+  Type parameters are specified using angle brackets (< and >), and are used to make the code more flexible and reusable.
+  
+9. What is a Generic method in Java?
+Ans - In Java, a generic method is a method that is defined with one or more type parameters, which are specified in angle brackets (< and >).
+     These type parameters represent the type of objects that the method can work with.
+     A generic method can be defined in any class or interface, and can be used with any type of object, 
+     as long as the type of the object is compatible with the type parameter.
 
+10. what is the difference between ArrayList and ArrayList<T>?
+Ans - ArrayList is a simple arrayList which can take any Ojbect as argument, means it can store, delete and manipulate any kind of object in java.
+      ArrayList<T> is also a simple arrayList but the difference is that it can only work with T type of objects and if any other object is tried to 
+      added in this arrayList then it will give a compile time error.
 
