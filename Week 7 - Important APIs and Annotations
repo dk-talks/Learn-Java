@@ -1,0 +1,116 @@
+                Week 7 Assignment solutoins - Important API and Anotatoins
+                
+                
+1. Write a program to print date and time in Java?
+Ans - 
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println("Current date and time is: " + formattedDateTime);
+        
+2. Write a program to convert a date to string in format "mm/dd/yyyy".
+Ans - 
+                import java.time.LocalDate;
+                import java.time.format.DateTimeFormatter;
+
+                public class DateToString {
+                    public static void main(String[] args) {
+                        LocalDate date = LocalDate.of(2023, 4, 12);
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+                        String formattedDate = date.format(formatter);
+                        System.out.println("Date in string format: " + formattedDate);
+                    }
+                }
+                
+                
+3. What is the difference between Collections and streams in java? Explan with example.
+Ans - 
+        In Java, collections and streams are both used for working with groups of objects, but they have some important differences.
+        Collections are used to represent a group of objects as a data structure, such as a list, set, or map. Collections can be modified by adding, 
+        removing, or updating elements, and you can access the elements in a collection in any order you choose.
+
+        Streams, on the other hand, are used for processing a group of objects in a functional way. A stream represents a sequence of elements that
+        can be processed in parallel or sequentially, and the stream operations can be either intermediate or terminal. Intermediate operations such as
+        filter, map, and sorted are used to transform the stream and produce a new stream, while terminal operations such as forEach, count, and reduce
+        are used to produce a result or a side effect.
+
+        Here's an example that demonstrates the difference between collections and streams:
+        
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.stream.Collectors;
+
+        public class CollectionsVsStreams {
+            public static void main(String[] args) {
+                List<Integer> numbers = new ArrayList<>();
+                numbers.add(1);
+                numbers.add(2);
+                numbers.add(3);
+                numbers.add(4);
+                numbers.add(5);
+
+                // Using collections to filter and sum the elements
+                List<Integer> filteredNumbers = new ArrayList<>();
+                for (Integer number : numbers) {
+                    if (number % 2 == 0) {
+                        filteredNumbers.add(number);
+                    }
+                }
+                int sum = 0;
+                for (Integer number : filteredNumbers) {
+                    sum += number;
+                }
+                System.out.println("Sum of even numbers using collections: " + sum);
+
+                // Using streams to filter and sum the elements
+                int sumOfEvenNumbers = numbers.stream()
+                        .filter(number -> number % 2 == 0)
+                        .mapToInt(Integer::intValue)
+                        .sum();
+                System.out.println("Sum of even numbers using streams: " + sumOfEvenNumbers);
+            }
+        }
+        
+        
+4. What is Enum in Java? Explain with example.
+Ans - 
+        In Java, an enum (short for "enumeration") is a special type of class that represents a group of constants. An enum is used when you need to
+        define a fixed set of values that can be used as input to a method or as output from a method. Each value in an enum is an instance of the enum
+        class, and each value has a name and an ordinal position within the enum.
+
+        Here's an example of how to define and use an enum in Java:
+        
+        public enum DayOfWeek {
+            MONDAY,
+            TUESDAY,
+            WEDNESDAY,
+            THURSDAY,
+            FRIDAY,
+            SATURDAY,
+            SUNDAY
+        }
+
+        public class Example {
+            public static void main(String[] args) {
+                DayOfWeek today = DayOfWeek.MONDAY;
+                System.out.println("Today is " + today);
+
+                for (DayOfWeek day : DayOfWeek.values()) {
+                    System.out.println(day + " has ordinal value " + day.ordinal());
+                }
+            }
+        }
+        
+5. What are inbuilt annotation in Java?
+Ans - In Java, there are several built-in annotations that provide metadata about classes, methods, fields, and parameters. Here are some of the
+        most commonly used built-in annotations:
+        
+        1. @Override: This annotation is used to indicate that a method is intended to override a method in a superclass or interface.
+
+        2.@Deprecated: This annotation is used to indicate that a class, method, or field should no longer be used and will likely be removed in
+                a future version of the API.
+                
+        3. @FunctionalInterface: This annotation is used to indicate that an interface is intended to be a functional interface, which is an interface
+           that has only one abstract method and is used as the basis for lambda expressions and method references.
+
+        4. @SafeVarargs: This annotation is used to indicate that a method is safe to call with a variable number of arguments of the same type.
