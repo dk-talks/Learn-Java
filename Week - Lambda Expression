@@ -1,0 +1,41 @@
+1. What is the lambda Expression of java 8? 
+    
+    Answer - 
+
+    As the name suggest it allows you to write more simple code. 
+    (a,b)-> a+b  which is equal to 
+
+    public int value(a,b){
+        return a+b; 
+    }
+
+    2. can you pass lambda expression to a method ? when? 
+
+    Ans- 
+    yes you can pass a lambda expression to a method provided it is expecting is a functional interface. for example if a method 
+    is accepting runnable, comperable or comperator then you can pass lambda expression to it because all the are functional interface
+    in java. 
+
+
+    3. What is functional  interface in java 8 ? 
+
+    Answer - 
+    
+    A functional interface in java is a interface with single abstract method. for example Runnable interface which 
+    just a sigle method run(). 
+    
+    4. what is the use of lambda expression in java? 
+
+    Answer- 
+
+    The main banifit of lambda expression in java is that it is simpler to pass a code block to a method. 
+    in lambda expression we don't need to give method name. It make the code short. 
+
+
+    5. Is it mandatory to pass parameter to lambda expression? 
+
+    Answer- 
+
+    No its not mandatory to pass parameters to lambda expression you can use lambda expression without passing parameters. 
+
+    for example ()-> System.out.println("Lambda expression without parameters"); 
