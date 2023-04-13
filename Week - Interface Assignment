@@ -1,0 +1,36 @@
+1. What is Interface? 
+
+ Answer - 
+
+ Interface is an mechnaism in java which is used to achieve complete abstarction. It is basically a kind of class which contains 
+ abstract methods. 
+
+
+ 2. Which modifiers are allowed for methods in interface ? Explain with an example.
+
+ Answer -
+ 
+ Only Abstract and public modifiers are allowed for interface in java. 
+Example - 
+
+  interface A 
+  {
+    abstract public void display(); 
+    
+  }
+
+  3. What is the use of interface in java? 
+  
+  Answer- 
+
+  interface in java is used to used to achive full abstraction. By interface we can achieve functaionality of multiple inheritance. 
+
+
+  4. What is the difference between abstract class and interface in java? 
+
+  Ans-  
+
+  The main difference in between interface and abstract class is that in interface we can't have methods body but in abstract class
+  we can add body to methods.  
+
+  By interface we can achive propety of multiple inheritance but in abstract class we can't do that. 
