@@ -1,0 +1,109 @@
+		Time & Space Complexity Assignment
+
+Que.1 - int sum = 0;
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= i; j++) {
+				sum++;
+			}
+		}
+
+Ans.1 - 	The Time complexity of given code is O(n^2)j because of two nested loops.
+
+		This code is only returning the sum of 1 to n numbers which can be completed by one loop only - O(n^2).
+		Further we can directly use formula (n*(n+1))/2 to find the sum of n natural numbers. This will complete in constant time O(1)
+
+
+Que.2 - Find the value of T(2) for the recurrence relation T(n) = 3T(n-1) + 12n, given that T(0) = 5.
+Ans.2 - T(n) = 3T(n-1) + 12n
+
+		First, we can find T(1) by substituting n=1 into the recurrence relation:
+
+		T(1) = 3T(1-1) + 12(1)
+		T(1) = 3T(0) + 12
+		T(1) = 3(5) + 12
+		T(1) = 27
+
+		Next, we can find T(2) by substituting n=2 into the recurrence relation:
+
+		T(2) = 3T(2-1) + 12(2)
+		T(2) = 3T(1) + 24
+		T(2) = 3(27) + 24
+		T(2) = 81 + 24
+		T(2) = 105
+
+		Therefore, the value of T(2) for the recurrence relation T(n) = 3T(n-1) + 12n, given that T(0) = 5, is 105.
+
+Que.3 - Given a recurrence relation, solve it using a substitution method. Relation : T(n) = T(n - 1) + c.
+
+Ans.3 - The substitution method is a technique used to solve recurrence relations by guessing the form of the solution and then proving it by induction. In the case 	of the recurrence relation T(n) = T(n-1) + c, we assume a solution of the form T(n) = a*n + b, where a and b are constants to be determined.
+
+We then verify the base case by checking that our solution satisfies T(0) = T(-1) + c, which simplifies to T(0) = c. Substituting our solution into this equation, we get T(0) = a*0 + b = b, which must be equal to c, so we set b = c.
+
+Next, we use induction to show that our solution holds for all values of n. Assuming that T(k) = ak + c for some value k, we prove that T(k+1) = T(k) + c, which gives T(k+1) = ak + 2c. Therefore, our solution T(n) = c satisfies the recurrence relation T(n) = T(n-1) + c.
+
+In summary, the substitution method allows us to solve the recurrence relation T(n) = T(n-1) + c by guessing the form of the solution, verifying the base case, and proving the solution by induction. For this particular recurrence relation, the solution is T(n) = c.
+
+
+
+Que. 4 - Given a recurrence relation:
+		T(n) = 16T(n/4) + n2logn
+		Find the time complexity of this relation using the master theorem.
+
+Ans -- 	T(n) = aT(n/b) + f(n)
+		a = 16, b = 4, and f(n) = n^2logn
+
+		We can then calculate the value of the function n^(log_b a) as follows:
+
+		n^(log_b a) = n^(log_4 16) = n^2
+
+		Comparing the value of f(n) with n^(log_b a), we see that f(n) is larger, which puts the recurrence relation in case 3 of the master theorem:
+
+		If f(n) = Θ(n^(c+ε)) for some constant ε > 0 and c = log_b a, then T(n) = Θ(n^c log n).
+		In this case, c = log_4 16 = 2, and f(n) = Θ(n^2logn), so we have:
+
+		T(n) = Θ(n^2 log n)
+
+		Therefore, the time complexity of the given recurrence relation T(n) = 16T(n/4) + n^2logn using the master theorem is Θ(n^2 log n).
+
+Que. 5 - Solve the following recurrence relation using recursion tree method T(n) = 2T(n/2) + n.
+
+Ans. 5 - 
+
+	To determine the total cost of the recurrence relation, we sum up the costs of all the nodes in the tree. We can see that each level of the tree contributes a 										
+	total cost of n, so the total cost of the tree is:
+
+	n + 2(n/2) + 4(n/4) + ... + n/2 + n/2 + 2(1)
+
+	This simplifies to:
+
+	n + n + n + ... + n + 2
+
+	where there are log(n) terms of n, so the total cost is:
+
+	nlog(n) + 2
+
+	Therefore, the solution to the recurrence relation T(n) = 2T(n/2) + n using the recursion tree method is T(n) = O(nlogn).
+
+Que. 6 - T(n) = 2T(n/2) + K
+     	= 2(2T(n/4) + K) + K
+	     = 2^2 T(n/2^2) + 2K + K
+     	= 2^i T(n/2^i) + iK
+
+		Letting i = log n, we get:
+
+		T(n) = 2^(log n) T(1) + (log n)K
+     	= nT(1) + (log n)K
+     	= n + (log n)K   [assuming T(1) = 1 for simplicity]
+
+		Therefore, the solution to the recurrence relation T(n) = 2T(n/2) + K using the recurrence tree method is T(n) = n + (log n)K.
+
+
+
+
+
+
+
+
+
+
+
