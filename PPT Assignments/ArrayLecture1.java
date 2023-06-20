@@ -29,6 +29,25 @@ class ArrayLecture1 {
             
         }
 
+        // Que 2 - Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. 
+        //Then return the number of elements in nums which are not equal to val.
+
+        // Solution
+
+        int arr1[] = {3,2,2,3};
+        int val = 3;
+
+        int count = 0;
+        for(int i = 0; i<arr1.length; i++) {
+            if(arr[i] != val) {
+                arr[count] = arr[i];
+                count++;
+            }
+        }
+        // now count is equal to number of elements not equal to val and arr is also converted to desired format.
+
+        //--------------------------------------------------------------------------------------------------------------------
+
 
     }
 
