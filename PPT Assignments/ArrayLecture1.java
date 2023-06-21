@@ -97,7 +97,119 @@ class ArrayLecture1 {
 
          int[] mergedSortedArray = merge(nums1, m, nums2, n);
          System.out.println("The sorted meged array is : " + mergedSortedArray);
-         
+
+
+
+         //------------------------------------------------Question 6--------------------------------------------------------------------
+
+         /*
+          * Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+          */
+
+          int[] dupArray = {1,2,3,5,5};
+
+          // brute force approach
+        
+          boolean isDuplicateFound = false;
+          for(int i = 0; i<dupArray.length-1; i++) {
+            for(int j = i+1; j<dupArray.length; j++) {
+                if(dupArray[i] == dupArray[j]) {
+                    isDuplicateFound = true;
+                    break;
+                }
+            }
+          }
+          if(isDuplicateFound) {
+            System.out.println("Yes, duplicate is available");
+          } else {
+            System.out.println("No, All elements are distinct!");
+          }
+
+          // optimized approach 
+
+          boolean isDuplicateFound1 = false;
+          HashMap<Integer, Integer> hm = new HashMap<>();
+          for(int i: dupArray) {
+            if(hm.containsKey(i)) {
+                isDuplicateFound1 = true;
+            } else {
+                hm.put(i, 1);
+            }
+          }
+
+          if(isDuplicateFound1) {
+            System.out.println("Yes, duplicate is available!");
+          } else {
+            System.out.println("No, All elements are distinct!");
+          }
+
+
+          //------------------------------------------------Question 7--------------------------------------------------------------------
+
+
+        /*
+         * Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the nonzero elements.
+         */
+
+          int[] nums3 = {0,1,0,3,12};
+
+          int left = 0;
+        for(int i = 0; i<nums3.length; i++) {
+            if(nums3[i] != 0) {
+                nums3[left] = nums3[i];
+                left++;
+            }
+        }
+
+        // at this stage, all non zero elements are at their place, just put zeroes at their's place
+        for(int i = left; i<nums3.length; i++) {
+            nums3[left] = 0;
+            left++;
+        }
+
+        // now nums is {1,3,12,0,0}
+        
+        //------------------------------------------------Question 8--------------------------------------------------------------------
+
+        /*
+    💡 You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, one of the numbers
+     in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.
+    You are given an integer array nums representing the data status of this set after the error.
+
+    Find the number that occurs twice and the number that is missing and return them in the form of an array.
+
+         */
+
+         int[] nums4 = {1,2,2,4};
+
+         int[] resultErrorNums = findErrorNums(nums4);
+
+         // now the resultErrorNums contains {2,3}
+
+
+
+    }
+
+    public static int[] findErrorNums(int[] nums) {
+        
+        // trying to solve using hashmap
+        int duplicateElement = 0;
+        int resultElement = 0;
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for(int i = 0; i<nums.length; i++) {
+            if(hm.containsKey(nums[i])) {
+                duplicateElement = nums[i];
+            }
+            hm.put(nums[i], hm.getOrDefault(nums[i], 0) + 1);
+        }
+
+        for(int i = 1; i<=nums.length; i++) {
+            if(!hm.containsKey(i)) {
+                resultElement = i;
+            }
+        }
+
+        return new int[]{duplicateElement, resultElement};
 
     }
 
