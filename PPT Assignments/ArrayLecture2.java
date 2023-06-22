@@ -16,6 +16,15 @@ public class ArrayLecture2 {
         int differentTypesOfCandiesSheCanEat = distributeCandies(candyType);
         System.out.println("She can eat " + differentTypesOfCandiesSheCanEat + " different types of candies.");
 
+        // Que. 3 - 594. Longest Harmonious Subsequence
+        int nums1[] = {1,3,2,2,5,2,3,7};
+
+        // brute force approach first -
+        int max1 = findLHSBruteForce(nums1);
+        System.out.println("Longest Harmoneous subsequence using Brute Force approach is: " + max1);
+        // Now optimized approach
+        int max = findLHS(nums1);
+        System.out.println("Longest Harmoneous subsequence is: " + max);
     }
 
     public static int arrayPairSum(int[] nums) {
@@ -38,6 +47,80 @@ public class ArrayLecture2 {
             hm.put(candyType[i], hm.getOrDefault(candyType[i], 0) + 1);
         }
         return Math.min(hm.size(), n/2);
+    }
+
+    public static int findLHS(int[] nums) {
+
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        int max = 0;
+
+        for(int i = 0; i<nums.length; i++) {
+            // if key already present, increase it by one else set 0 then increase by one
+            hm.put(nums[i], hm.getOrDefault(nums[i], 0)+1);
+        }
+
+        for(int n: nums) {
+            if(hm.containsKey(n+1)) {
+                int length = hm.get(n) + hm.get(n+1);
+                max = Math.max(max, length);
+            }
+            if(hm.containsKey(n-1)) {
+                int length = hm.get(n) + hm.get(n-1);
+                max = Math.max(max, length);
+            }
+        }
+        return max;
+
+        // time complexity - O(n)
+        // space complexity - O(n)
+        
+    }
+
+    public static int findLHSBruteForce(int[] nums) {
+
+
+        int lhs = 0;
+        for(int i = 0; i<nums.length; i++) {
+            int count = checkElement(nums, i);
+            lhs = Math.max(lhs, count);
+        }
+        return lhs;
+        
+    }
+
+    // my approach - loop through the array, take current element, and then check it with element+1 and element-1 seprately and count, also check if both max and min numbers are avalilable
+    // using isPairAvailable boolean value.
+
+
+    public static int checkElement(int[] nums, int i) {
+        int countWinner = 0;
+        int countMinus = 0;
+        int countPlus  = 0;
+        boolean isPairAvailableForMinus = false;
+        boolean isPairAvailableForPlus = false;
+        for(int j = i; j<nums.length;j++) {
+            if(nums[j] == nums[i]) {
+                countMinus++;
+                countPlus++;
+            }
+            if(nums[j] == nums[i]+1) {
+                countPlus++;
+                isPairAvailableForPlus = true;
+            } else if(nums[j] == nums[i]-1) {
+                countMinus++;
+                isPairAvailableForMinus = true;
+            }
+            
+        }
+        if(!isPairAvailableForPlus) {
+            countPlus = 0;
+        }
+        if(!isPairAvailableForMinus) {
+            countMinus = 0;
+        }
+        countWinner = Math.max(countPlus, countMinus);
+        return countWinner;
+        
     }
     
 }
