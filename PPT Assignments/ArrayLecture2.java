@@ -9,6 +9,13 @@ public class ArrayLecture2 {
         int maximizedSum = arrayPairSum(nums);
         System.out.println("Your Maximized sum is: " + maximizedSum);
 
+
+        // Que. 2 - 575. Distribute Candies
+
+        int[] candyType = {1,1,2,2,3,3};
+        int differentTypesOfCandiesSheCanEat = distributeCandies(candyType);
+        System.out.println("She can eat " + differentTypesOfCandiesSheCanEat + " different types of candies.");
+
     }
 
     public static int arrayPairSum(int[] nums) {
@@ -22,6 +29,15 @@ public class ArrayLecture2 {
         }
         return maximized;
         
+    }
+
+    public static int distributeCandies(int[] candyType) {
+        int n = candyType.length;
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for(int i = 0; i<candyType.length; i++) {
+            hm.put(candyType[i], hm.getOrDefault(candyType[i], 0) + 1);
+        }
+        return Math.min(hm.size(), n/2);
     }
     
 }
