@@ -47,6 +47,17 @@ public class ArrayLecture2 {
         int target = 24;
         int targetIndex = binarySearch(nums3, target);
         System.out.println("The index of target is: " + targetIndex);
+
+        // Que. 7 - 896 - Monotronic Array
+        int[] nums4 = {1,2,2,3};
+        System.out.println("Is nums4 Monotronic: " + isMonotronic(nums4));
+
+        // Que. 8 - 908. Smallest Range I.
+        int nums5 = {1,3,6};
+        int k = 3;
+        System.out.println("Minimum difference after applying operation is: " + smallestRangeI(nums5, k));
+
+        
     }
 
     public static int arrayPairSum(int[] nums) {
@@ -199,6 +210,46 @@ public class ArrayLecture2 {
         }
         return -1;
 
+    }
+
+    public static boolean isMonotonic(int[] nums) {
+        // brute force approach
+        boolean isMonotoneIncreasing = true;
+        boolean isMonotoneDecreasing = true;
+
+        // check monotone Increasing
+        for(int i = 0; i<nums.length-1; i++) {
+            if(nums[i] > nums[i+1]) {
+                isMonotoneIncreasing = false;
+            }
+            if(nums[i] < nums[i+1]) {
+                isMonotoneDecreasing = false;
+            }
+        }
+        if(isMonotoneIncreasing == true || isMonotoneDecreasing == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int smallestRangeI(int[] nums, int k) {
+        // this question is simple, but wordings is weird
+        // just have to find min and max from nums, and add k to min and sub k to max and return the difference, also, difference should not be less than 0
+
+        // first of all find max and min
+        int maxValue = Integer.MIN_VALUE;
+        int minValue = Integer.MAX_VALUE;
+
+        for(int i = 0; i<nums.length; i++) {
+            maxValue = Math.max(maxValue, nums[i]);
+            minValue = Math.min(minValue, nums[i]);
+        }
+        if(minValue+k >= maxValue-k) {
+            return 0;
+        } else {
+            return (maxValue-k) - (minValue+k);
+        }
     }
     
 }
