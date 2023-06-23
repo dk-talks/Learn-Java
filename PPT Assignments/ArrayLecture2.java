@@ -25,6 +25,28 @@ public class ArrayLecture2 {
         // Now optimized approach
         int max = findLHS(nums1);
         System.out.println("Longest Harmoneous subsequence is: " + max);
+
+        // Que. 4 - 605. Can Place Flowers
+
+        int[] flowerbed = {1,0,0,0,1,0,0};
+        int n = 2;
+
+        boolean canPlot = canPlaceFlowers(flowerbed, n);
+        System.out.println("Can Place folwer? - " + canPlot);
+
+
+        // Que 5 - 628. Maximum Product of Three Numbers
+
+        int[] nums2 = {-100, 4, -98, -6, 2,3};
+        int maximumProductOf3 = maximumProduct(nums2);
+        System.out.println("Maximum product of three elements is: " + maximumProductOf3);
+        
+
+        // Que. 6 - 704. Binary Search 
+        int[] nums3 = {4,10,15,24,100,2000};
+        int target = 24;
+        int targetIndex = binarySearch(nums3, target);
+        System.out.println("The index of target is: " + targetIndex);
     }
 
     public static int arrayPairSum(int[] nums) {
@@ -121,6 +143,62 @@ public class ArrayLecture2 {
         countWinner = Math.max(countPlus, countMinus);
         return countWinner;
         
+    }
+
+    public static boolean canPlaceFlowers(int[] flowerbed, int n) {
+        
+        int count = 0; // Count of available spots to plant flowers
+        
+        for (int i = 0; i < flowerbed.length; i++) {
+            if (flowerbed[i] == 0) {
+                // Check if the current spot and its adjacent spots are empty also make sure they do not get out of bound
+                boolean canPlant = (i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0);
+                if (canPlant) {
+                    flowerbed[i] = 1; // Plant a flower
+                    count++;
+                }
+            }
+        }
+        
+        return count >= n;
+
+        
+    }
+
+    public static int maximumProduct(int[] nums) {
+        
+        Arrays.sort(nums);
+        int len = nums.length;
+        
+
+        // there can be two solutions 1. - Max1 * Max2 * Max3 OR 2. Min1 * Min2 * Max1
+        Arrays.sort(nums);
+        int product1 = nums[len-1] * nums[len-2] * nums[len-3];
+        int product2 = nums[0] * nums[1] * nums[len-1];
+
+        return Math.max(product1, product2);
+        
+
+
+    }
+
+    public static int binarySearch(int[] nums, int target) {
+
+        int start = 0;
+        int end = nums.length-1;
+
+        while(start<=end) {
+            int mid = start + (end-start)/2;
+            if(nums[mid] == target) {
+                return mid;
+            } else if(nums[mid] < target) {
+                start = mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+        return -1;
+
     }
     
 }
