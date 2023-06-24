@@ -242,6 +242,7 @@ public class ArrayLecture2 {
         int minValue = Integer.MAX_VALUE;
 
         for(int i = 0; i<nums.length; i++) {
+            // change max and min value if any min value OR max value appear while iterating
             maxValue = Math.max(maxValue, nums[i]);
             minValue = Math.min(minValue, nums[i]);
         }
