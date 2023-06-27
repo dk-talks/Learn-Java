@@ -30,8 +30,39 @@ public class ArrayLecture3 {
             }
             System.out.println();
         }
+
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+        // Que - 3 - 31. Next Permutations
+
+        int[] nums3 = {1, 2, 3};
+        
+        int[] nextPermutation = nextPermutation(nums3);
+
+        // printing next permutation of nums
+        for(int n: nextPermutation) {
+            System.out.print(n + ", ");
+        }
+
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+        // Que - 4 - 35. Search Insert Position
+
+        int[] nums4 = {1,3,5,6};
+        int target4 = 5; 
+
+        int resultIndex = searchInsert(nums4, target4);
+        System.out.println("The element is found at: " + resultIndex);
+
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+        // Que. - 5 - 66. Plus One
+        int[] digits = {9,9,9,9};
+        int[] plusOneArray = plusOne(digits);
+        // now plusOneArray contains the array with adding 1 to the equavalent digit of digits array.
+
    }  
 
+    // Answer 1 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
    public static int threeSumClosest(int[] nums, int target) {
 
         // brute force approach - 
@@ -74,6 +105,8 @@ public class ArrayLecture3 {
          return closestSum;
 
    }
+
+    // Answer 2 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
    public static List<List<Integer>> fourSum(int[] nums, int target) {
 
@@ -132,7 +165,97 @@ public class ArrayLecture3 {
         }
 
         return result;
-    
+
+    }
+
+    // Answer 3 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+    public static int[] nextPermutation(int[] nums) {
+
+        int n = nums.length;
+        int i = n - 2;
+
+        // Find the first decreasing element from the right
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+
+        if (i >= 0) {
+            // Find the smallest element larger than nums[i] in the suffix
+            int j = n - 1;
+            while (j > i && nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+
+        // Reverse the suffix to get the smallest permutation
+        reverse(nums, i + 1, n - 1);
+
+        return nums;
+    }
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    private static void reverse(int[] nums, int left, int right) {
+        while (left < right) {
+            swap(nums, left, right);
+            left++;
+            right--;
+        }
+    }
+
+    // Answer 4 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+    public static int searchInsert(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+
+        while(start <= end){
+            int mid = start + (end-start)/2;
+
+            if(nums[mid] > target) {
+                end = mid - 1;
+            }else if(nums[mid] < target){
+                start = mid + 1;
+            }else {
+                return mid;
+            }
+
+        }
+        return start;
+    }
+
+    // Answer 5 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+    public static int[] plusOne(int[] digits) {
+        
+        int n = digits.length;
+        boolean isoK = false;
+        for(int i = n-1; i>=0; i--) {
+            if(digits[i] == 9) {
+                digits[i] = 0;
+            } else {
+                digits[i] = digits[i] + 1;
+                isoK = true;
+                break;
+            }
+        }
+        if(!isoK) {
+            int[] newDigits = new int[n+1];
+            newDigits[0] = 1;
+            for(int i = 1; i<newDigits.length; i++) {
+                newDigits[i] = 0;
+            }
+            return newDigits;
+        } else {
+            return digits;
+        }
+
     }
 
    
