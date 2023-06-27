@@ -60,6 +60,43 @@ public class ArrayLecture3 {
         int[] plusOneArray = plusOne(digits);
         // now plusOneArray contains the array with adding 1 to the equavalent digit of digits array.
 
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+        // Que. - 6 - 136. Sigle Number
+        int[] nums6 = {2,2,1};
+        int singleNumber = singleNumber(nums6);
+        System.out.println("The only single number in aray is: " + singleNumber);
+
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+        // Que. - 7 - 228. Summary Ranges
+        int nums7[] = {0,1,2,4,5,7};
+        List<String> summaryRanges = new ArrayList<>();
+        summaryRanges = summaryRanges(nums7);
+        // list will contain formatted range of consecutive elements from array nums7
+
+        // -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+
+        // Que. 8 - Given an array of meeting time intervals where intervals[i] = [starti, endi],
+        //          determine if a person could attend all meetings.
+
+        int[][] meeting1 = {{0,30}, {5,40}, {15,45}};
+
+        boolean canAttend = true;
+        int meetingEnd = 0;
+        for(int i = 0; i<meeting1.length; i++) {
+            if(meeting1[i][1] < meetingEnd) {
+                // next meeting will start before the previos ends
+                canAttend = false;
+                break;
+            } else {
+                meetingEnd = meeting1[i][1];
+            }
+        }
+        System.out.println("can attend all meetings or not:- " + canAttend);
+
+
    }  
 
     // Answer 1 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
@@ -258,7 +295,59 @@ public class ArrayLecture3 {
 
     }
 
-   
+    // Answer 6 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
+    public static int singleNumber(int[] nums6) {
+        int result = 0;
+        for(int num: nums6) {
+            result ^= num;
+        }
+        return result;
+    }
+
+    // Answer 7 - -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+    public static List<String> summaryRanges(int[] nums) {
+        List<String> summaryRanges = new ArrayList<>();
+        
+
+        if(nums.length == 0) {
+            return summaryRanges;
+        } else if(nums.length == 1) {
+            summaryRanges.add(Integer.toString(nums[0]));
+            return summaryRanges;
+        }
+
+        int start = nums[0];
+        int end = nums[0];
+
+        for(int i = 1; i<nums.length; i++) {
+            if(nums[i] == end+1) {
+                // i and end are consecutive
+                end = nums[i];
+            } else {
+                // adding range to sumarryRanges list
+                if(start == end) {
+                    summaryRanges.add(Integer.toString(start));
+                } else {
+                    summaryRanges.add(start + "->" + end);
+                }
+                // preparing for next iteration
+                start = end = nums[i];
+
+            }
+        }
+
+        // for last start and end - add the range
+        if(start == end) {
+            summaryRanges.add(Integer.toString(start));
+        } else {
+            summaryRanges.add(start + "->" + end);
+        }
+
+        return summaryRanges;
+    }
+
+    // Ans 8 is with the question only above......
     
 }
