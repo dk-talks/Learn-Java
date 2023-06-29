@@ -68,6 +68,43 @@ public class ArrayLecture5 {
            System.out.println("Difference of two Arrays");
         }
 
+        /*
+        Que. 5 - 1385. Find the Distance Value Between Two Arrays
+         */
+
+        int[] arr51 = {4,5,8};
+        int[] arr52 = {10,9,1,8};
+        int d5 = 2;
+
+        int distance5 = findTheDistanceValue(arr51, arr52, d5);
+        System.out.println("The distance value between two array is: " + distance5);
+
+
+        /*
+        Que. - 6 - 442. Find All Duplicates in an Array 
+         */
+
+        int[] nums6 = {4,3,2,7,8,2,3,1};
+
+        List<Integer> duplicates6 = findDuplicates(nums6);
+
+        System.out.print("duplicates in array are: ");
+
+        for(int n6: duplicates6) {
+            System.out.print(n6 + ", ");
+        }
+        System.out.println();
+
+        /*
+        Que. - 7 - 153. Find Minimum in Rotated Sorted Array
+         */
+
+        int[] rotatedArray = {3,4,5,1,2};
+
+        int minimumNum = findMin(rotatedArray);
+
+        System.out.println("MInimum number in rotated array is: " + minimumNum);
+
 
 
         
@@ -283,6 +320,83 @@ public class ArrayLecture5 {
     }
 
 
+    // answer 5 
+
+    public static int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
+        // brute force approach
+        int distance = 0;
+        for(int i = 0; i<arr1.length; i++) {
+            boolean withinThreshhold = true;
+            for(int j = 0; j<arr2.length; j++) {
+                int difference = arr1[i]-arr2[j];
+                // apply mod to it
+                if(difference < 0) {
+                    difference *= -1;
+                }
+                if(difference <= d) {
+                    withinThreshhold = false;
+                    break;
+                }
+            }
+            if(withinThreshhold) {
+                distance++;
+            }
+        }
+        return distance;
+    }
+
+    
+
+
+    // answer 6
+
+    public static List<Integer> findDuplicates(int[] nums) {
+
+        Arrays.sort(nums);
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0; i<nums.length-1; i++) {
+            if(nums[i] == nums[i+1]) {
+                list.add(nums[i]);
+            }
+        }
+        return list;
+        
+    }
+
+
+    // answer 7
+
+    public static int findMin(int[] nums) {
+
+        // using binary search to find the pivot point (nums[i] > nums[i+1])
+
+        int n = nums.length;
+        int start = 0;
+        int end = n-1;
+
+        if(n == 1) {
+            return nums[0];
+        }
+
+        while(start <= end) {
+            int mid = start + (end - start) / 2;
+
+            // check for pivot
+            if( mid != n-1 && nums[mid] > nums[mid+1]) {
+                return nums[mid+1];
+            }
+
+            if(nums[mid] > nums[n-1]) {
+                start = mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+        // if pivot is not found, that means array is fully rotated and minimum element is nums[0]
+        return nums[0];
+        
+    }
+
 
 
 
@@ -335,5 +449,6 @@ public class ArrayLecture5 {
             return fake;
         }
     }
+
 
 }
