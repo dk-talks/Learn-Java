@@ -78,6 +78,14 @@ public class StringLecture2 {
         boolean isSimilar = backspaceCompare(s, t);
         System.out.println("Are S and T similar? " + isSimilar);
 
+        /*-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+        Que 8. - 1232. Check If It Is a Straight Line
+         */
+
+        int[][] coordinates = {{1,2},{2,3},{3,4},{4,5},{5,6},{6,7}};
+        boolean isStraighLine = checkStraightLine(coordinates);
+
+        System.out.println("Do these coordinates form a straight line" + isStraighLine);
 
 
     }
@@ -287,6 +295,27 @@ public class StringLecture2 {
         }
 
         return list;
+    }
+
+    public static boolean checkStraightLine(int[][] coordinates) {
+        
+        int xDiff = coordinates[1][0] - coordinates[0][0];
+        int yDiff = coordinates[1][1] - coordinates[0][1];
+
+        // Check if all other coordinates lie on the same line
+        for (int i = 2; i < coordinates.length; i++) {
+            int currentXDiff = coordinates[i][0] - coordinates[0][0];
+            int currentYDiff = coordinates[i][1] - coordinates[0][1];
+    
+            // If the current point doesn't have the same slope as the first two points, return false
+            if (xDiff * currentYDiff != yDiff * currentXDiff) {
+                return false;
+            }
+        }
+    
+        // All points have the same slope, so they lie on a straight line
+        return true;
+
     }
     
 }
