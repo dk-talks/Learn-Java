@@ -67,6 +67,16 @@ public class StringLecture2 {
         boolean isRotated = rotateString(s6, goal);
         System.out.println("Is s rotated: " + isRotated);
 
+        
+        /*-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+        Que 7. - 844. Backspace String Compare
+         */
+
+        String s = "ab#c";
+        String t = "ad#c";
+
+        boolean isSimilar = backspaceCompare(s, t);
+        System.out.println("Are S and T similar? " + isSimilar);
 
 
 
@@ -245,6 +255,38 @@ public class StringLecture2 {
         return false;
          */
 
+    }
+
+    public static boolean backspaceCompare(String s, String t) {
+        
+        // processin both the Strings
+
+        LinkedList<Character> sList = processString(s);
+        LinkedList<Character> tList = processString(t);
+
+        if(sList.equals(tList)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static LinkedList<Character> processString(String inputString) {
+        LinkedList<Character> list = new LinkedList<>();
+
+        for(int i = 0; i<inputString.length(); i++) {
+            if(inputString.charAt(i) != '#') {
+                list.add(inputString.charAt(i));
+            } else {
+                if(list.size() > 0) {
+                    list.removeLast();
+                }
+                
+            }
+        }
+
+        return list;
     }
     
 }
