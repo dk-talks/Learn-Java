@@ -176,6 +176,119 @@ public class RecursionLecture8 {
 
         return compressedIndex;
     }
+
+
+    // Answer 6 
+
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+
+        if (s == null || p == null || s.length() < p.length())
+            return result;
+
+        // Create a frequency map of characters in p
+        Map<Character, Integer> pMap = new HashMap<>();
+        for (char ch : p.toCharArray()) {
+            pMap.put(ch, pMap.getOrDefault(ch, 0) + 1);
+        }
+
+        int left = 0;
+        int right = 0;
+        int count = pMap.size();
+
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+
+            // Expand the window by moving the right pointer
+            if (pMap.containsKey(ch)) {
+                pMap.put(ch, pMap.get(ch) - 1);
+                if (pMap.get(ch) == 0)
+                    count--;
+            }
+            right++;
+
+            // Shrink the window if it's valid
+            while (count == 0) {
+                char leftChar = s.charAt(left);
+
+                // Check if an anagram is found
+                if (pMap.containsKey(leftChar)) {
+                    pMap.put(leftChar, pMap.get(leftChar) + 1);
+                    if (pMap.get(leftChar) > 0)
+                        count++;
+                }
+
+                // Update the result if the window length matches p's length
+                if (right - left == p.length())
+                    result.add(left);
+
+                left++;
+            }
+        }
+
+        return result;
+    }
+
+
+
+    // Answr 7
+
+    public static String decodeString(String s) {
+        Stack<Integer> countStack = new Stack<>();
+        Stack<String> stringStack = new Stack<>();
+        StringBuilder currentString = new StringBuilder();
+        int count = 0;
+
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                count = count * 10 + (ch - '0');
+            } else if (ch == '[') {
+                countStack.push(count);
+                stringStack.push(currentString.toString());
+                currentString = new StringBuilder();
+                count = 0;
+            } else if (ch == ']') {
+                StringBuilder temp = new StringBuilder(stringStack.pop());
+                int repeatTimes = countStack.pop();
+                for (int i = 0; i < repeatTimes; i++) {
+                    temp.append(currentString);
+                }
+                currentString = temp;
+            } else {
+                currentString.append(ch);
+            }
+        }
+
+        return currentString.toString();
+    }
+
+    // Answr 8 -
+
+    public static boolean areAlmostEqual(String s, String goal) {
+        if (s.equals(goal))
+            return true;
+
+        int n = s.length();
+        int[] freq = new int[26];
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            freq[s.charAt(i) - 'a']++;
+            freq[goal.charAt(i) - 'a']--;
+            if (s.charAt(i) != goal.charAt(i))
+                count++;
+        }
+
+        if (count != 2)
+            return false;
+
+        for (int f : freq) {
+            if (f != 0)
+                return false;
+        }
+
+        return true;
+    }
   
     
 }
