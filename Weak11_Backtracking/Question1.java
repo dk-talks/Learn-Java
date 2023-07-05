@@ -1,7 +1,7 @@
 public class Question1 {
     public static void main(String[] args) {
 
-        // Que.1  - 698. Partition to K Equal Sum Subsets
+        // Que.1  - 698. Partition to K Equal Sum Subsets 
 
         int[] nums = {4,3,2,3,5,2,1};
         int k = 4;
