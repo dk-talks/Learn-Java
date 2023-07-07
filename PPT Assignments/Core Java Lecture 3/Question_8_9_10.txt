@@ -1,0 +1,35 @@
+Question - 8 - What are the advantages of abstraction in java?
+
+  The advantages of abstraction in Java can be summarized as follows:
+  
+  1. Simplified Complex Systems: Abstraction simplifies complex systems by focusing on essential details and hiding unnecessary complexities.
+  
+  2. Code Modularity and Reusability: Abstraction promotes code modularity and reusability by encapsulating related functionality into reusable components.
+  
+  3. Encapsulation of Implementation Details: Abstraction hides the internal implementation details, protecting them from direct access and modification.
+  
+  4. Flexibility and Extensibility: Abstraction allows for multiple implementations and supports interchangeable components, providing flexibility and enabling future enhancements.
+  
+  5. Enhanced Collaboration: Abstraction provides a clear contract for interacting with components, facilitating collaboration among developers.
+
+
+Question - 9 - What is an abstraction explained with an Example?
+
+    Abstraction is a fundamental concept in object-oriented programming that involves simplifying complex systems by focusing on essential details and hiding unnecessary complexities. 
+    It allows you to represent real-world entities or concepts in a simplified and generalized manner.
+    
+    Let's consider an example of a car. In a car, there are various components such as the engine, wheels, steering wheel, and brakes. Each component has its own specific functionalities and 
+    complexities. However, when we talk about a car from a high-level perspective, we don't need to know the intricate details of how each component works internally. Instead, we focus on the
+    overall behavior and functionality of the car.
+    
+    In Java, abstraction can be achieved through the use of abstract classes and interfaces. Using the car example, we can define an abstract class called "Car" that provides a generalized 
+    blueprint for all types of cars. This abstract class can define common properties and behaviors such as start(), accelerate(), and stop(). However, the specific implementation details of these 
+    behaviors can be left to the concrete subclasses that inherit from the "Car" class.
+
+
+
+Question - 10 - What is the Final Class in Java?
+
+  A final class is a class that cannot be subclassed or inherited by other classes. It is effectively the last level in the class hierarchy and cannot be extended. This is often done to 
+  prevent further modifications or extensions to the class, ensuring that its implementation remains unchanged.
+
