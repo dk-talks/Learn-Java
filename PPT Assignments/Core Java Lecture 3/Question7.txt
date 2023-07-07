@@ -1,0 +1,20 @@
+No, Java is not considered a 100% Object-Oriented Programming (OOP) language. While Java is primarily designed to support OOP principles, there are a few aspects that deviate from pure OOP. 
+Here are a few reasons why Java is not considered a 100% OOP language:
+
+  1. Primitive Data Types: Java includes primitive data types like int, boolean, float, etc., which are not objects. Unlike objects, primitive types are not instances of classes and do not have 
+    associated methods or behaviors.
+  
+  2. Static Members: Java allows the declaration of static variables and methods that are associated with a class rather than an instance. Static members can be accessed without creating an object,
+    which goes against the principles of pure OOP, where everything should be an instance of a class.
+  
+  3. Procedural Programming Features: Java supports procedural programming features like control structures (if, for, while), which are not strictly part of the OOP paradigm. These features allow 
+    developers to write code that follows procedural programming principles alongside OOP concepts.
+  
+  4. Inheritance Limitations: Java supports single inheritance, where a class can inherit from only one superclass. Pure OOP languages, on the other hand, support multiple inheritance, allowing 
+    a class to inherit from multiple superclasses. Java introduces interfaces as a mechanism to achieve a form of multiple inheritance through interface implementation.
+  
+  5. Direct Memory Manipulation: Java provides a mechanism for direct memory manipulation through the use of pointers (java.nio.Buffer), which allows access to memory addresses and introduces 
+    an element of low-level programming. This aspect is not strictly aligned with the encapsulation principle of OOP.
+  
+  6. Despite these deviations, Java is widely recognized as an object-oriented programming language due to its strong support for encapsulation, inheritance, polymorphism, and other OOP concepts. 
+    It encourages the use of objects, classes, and abstraction, and provides extensive libraries and tools for building large-scale, object-oriented applications.
