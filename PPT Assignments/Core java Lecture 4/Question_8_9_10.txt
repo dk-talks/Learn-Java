@@ -1,0 +1,19 @@
+Q8.What is the functional interface in Java 8?
+
+  In Java 8, a functional interface is an interface that contains exactly one abstract method. Functional interfaces are also known as single abstract method (SAM) interfaces. They are the
+  foundation of lambda expressions and provide the ability to treat functions as first-class citizens in Java.
+
+
+Q9.What is the benefit of lambda expressions in Java 8?
+  Lambda expressions in Java 8 offer two significant benefits: concise syntax and functional programming capabilities. The concise syntax allows for more readable and expressive code, eliminating 
+  the need for verbose anonymous inner classes. By enabling functional programming, lambda expressions make it easier to work with higher-order functions, function composition, and parallel
+  processing. These benefits enhance code readability, promote modularity and flexibility, and improve productivity by reducing the amount of boilerplate code and enabling more efficient and 
+  expressive programming techniques.
+
+
+
+Q10.Is it mandatory for a lambda expression to have parameters?
+   No, it is not mandatory for a lambda expression to have parameters. The presence of parameters in a lambda expression depends on the functional interface it is implementing. If the functional
+  interface has a method with parameters, the lambda expression must provide corresponding parameters. However, if the functional interface has a method without parameters, the lambda expression
+  can be written without parameters as well. The absence of parameters is denoted by empty parentheses () in the lambda expression syntax. For example, a lambda expression without parameters would 
+  be written as () -> { // implementation }.
