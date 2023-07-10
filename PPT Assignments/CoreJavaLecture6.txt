@@ -38,3 +38,97 @@ Ans -
     Interoperability and compatibility: Integrates well with other Java features, APIs, and frameworks for seamless usage.
 
 
+Q4.Explain the various interfaces used in the Collection framework.
+Ans - 
+    The Collection framework in Java provides several interfaces that define the behavior and operations for working with collections. Here are the key interfaces used in the Collection             framework:
+
+    Collection: This is the root interface in the Collection framework hierarchy. It defines the basic operations performed on a group of objects, such as adding elements, removing elements,             checking for the presence of elements, and iterating over the elements. It is extended by the List, Set, and Queue interfaces.
+
+    List: The List interface extends the Collection interface and represents an ordered collection of elements. It allows duplicate elements and provides methods to access elements by their             index. Some commonly used implementations of the List interface are ArrayList, LinkedList, and Vector.
+
+    Set: The Set interface extends the Collection interface and represents a collection of unique elements. It does not allow duplicate elements. Some commonly used implementations of the Set             interface are HashSet, TreeSet, and LinkedHashSet.
+
+     Queue: The Queue interface extends the Collection interface and represents a collection that follows the FIFO (First-In-First-Out) principle. It provides methods for adding elements to             the end of the queue, removing elements from the front of the queue, and examining the elements. Some commonly used implementations of the Queue interface are LinkedList and PriorityQueue.
+
+    Map: The Map interface represents a mapping between keys and values. Each key in a Map must be unique, and it allows you to store and retrieve values based on their associated keys. Some             commonly used implementations of the Map interface are HashMap, TreeMap, and LinkedHashMap.
+    
+    Iterator: The Iterator interface provides methods to traverse and access the elements of a collection sequentially. It allows you to iterate over a collection and perform operations on each         element.
+    
+    These interfaces provide a common set of methods and behaviors, allowing developers to write generic code that can work with different types of collections. Implementations of these                 interfaces offer specific functionalities and performance characteristics to suit different use cases.
+
+
+Q.5 - Differentiate between List and Set  in Java.
+Ans - 
+    In Java, the List and Set interfaces are both part of the Collection framework and are used to store and manipulate groups of elements. However, there are key differences between List and         Set:
+
+    Duplicates: Lists allow duplicate elements, while Sets do not. In a List, you can have multiple occurrences of the same element, whereas a Set ensures that each element is unique.
+    
+    Order: Lists maintain the order in which elements are added, while Sets do not guarantee a specific order. In a List, you can access elements by their index, and the order of elements is         preserved. Sets, on the other hand, do not have an inherent order, although specific implementations like LinkedHashSet may maintain the insertion order.
+    
+    Implementation: Lists are commonly implemented using data structures such as arrays or linked lists. Some List implementations in Java include ArrayList, LinkedList, and Vector. Sets are         implemented using data structures like hash tables or balanced trees. Examples of Set implementations are HashSet, TreeSet, and LinkedHashSet.
+    
+    Usage: Lists are typically used when you need an ordered collection that allows duplicate elements. They are useful when you need to access elements by their index or maintain a specific         sequence of elements. Sets are used when uniqueness of elements is a requirement, and the order of elements is not important. Sets are particularly useful for tasks like removing duplicates         from a collection or testing membership.
+    
+    In summary, Lists allow duplicates, maintain an order, and offer random access to elements. Sets enforce uniqueness, do not guarantee order (except for specific implementations), and are         useful when you need to ensure distinct elements in a collection.
+
+
+
+Q6.What is the Differentiate between Iterator and ListIterator in Java.
+Ans - 
+    In Java, both Iterator and ListIterator are interfaces used for traversing collections. However, there are some differences between them:
+
+    Availability: The Iterator interface is available for all Collection types, including List, Set, and Queue. The ListIterator interface, on the other hand, is specifically designed for             traversing elements in Lists. It extends the Iterator interface and provides additional functionality specifically for List implementations.
+    
+    Direction of traversal: The Iterator interface allows traversal in a forward direction only, from the beginning to the end of the collection. It provides methods like hasNext() and next() for this purpose. The ListIterator interface, however, supports bidirectional traversal. It allows traversing both forward and backward through the list, and provides additional methods like hasPrevious() and previous().
+    
+    Element modification: The Iterator interface provides methods like remove() to remove the current element during iteration. However, it does not support adding or modifying elements while iterating. In contrast, the ListIterator interface allows adding, removing, and modifying elements at any position in the List during iteration. It provides methods like add() and set() for this purpose.
+    
+    Index-based access: The Iterator interface does not provide direct access to the underlying collection's index. It focuses on sequential traversal and does not expose index-based operations. On the other hand, the ListIterator interface provides methods like nextIndex() and previousIndex() to retrieve the index of the next or previous element in addition to supporting index-based access through set() and add() methods.
+
+
+Q7.What is the Differentiate between Comparable and Comparator?
+Ans - 
+    Comparable:
+    
+        The Comparable interface is used to define the natural ordering of objects within a class. It is typically implemented by the class itself.
+        The compareTo() method is defined in the Comparable interface, which compares the current object with another object and returns a negative integer, zero, or positive integer based on          the comparison result.
+        The natural ordering defined by Comparable is inherent to the object's class and can be used for sorting or ordering objects in data structures like TreeSet or Arrays.sort().
+        Comparator:
+    
+    The Comparator-  used to define custom comparison logic for objects that do not implement Comparable or when you want to define alternative comparison criteria.
+    Comparator is typically implemented as a separate class or as an anonymous inner class.
+    The compare() method is defined in the Comparator interface, which takes two objects as arguments and returns a negative integer, zero, or positive integer based on the comparison result.
+    Comparator allows for multiple ways to sort or order objects by providing different comparison strategies. It is especially useful when you need to sort objects based on different criteria     or when you want to sort objects that are not directly modifiable.
+
+
+Q8.What is collision in HashMap?
+Ans - 
+    In a HashMap in Java, collision refers to a situation where two or more keys hash to the same index or bucket in the underlying array. Hash collision occurs when different keys produce the     same hash code or when the hash function distributes keys unevenly.
+    
+    When a collision occurs, the HashMap needs a way to handle it. Here's how collisions are typically handled in a HashMap:
+    
+    Chaining: One common approach to handling collisions is by using a technique called chaining. In chaining, each bucket in the underlying array holds a linked list of key-value pairs. When     a collision occurs, the new key-value pair is appended to the linked list at the corresponding bucket. This allows multiple entries with different keys to coexist at the same index.
+    
+    Equals() method: To resolve collisions and find the correct value associated with a key, HashMap uses the equals() method. When retrieving a value for a key, the HashMap checks the key         against all the keys in the linked list at the corresponding bucket. The equals() method is used to compare the given key with the keys in the list until a match is found.
+    
+    Performance impact: Collisions can affect the performance of a HashMap. When many keys hash to the same bucket, the linked list at that bucket can become longer, leading to slower lookup     times. In the worst case scenario, with a poor hash function or many colliding keys, the performance of HashMap can degrade to O(n) for lookup and retrieval operations.
+
+
+Q9.Distinguish between a hashmap and a Treemap.
+Ans - 
+    HashMap: Provides fast performance, no specific order, allows null keys, suitable for general-purpose use cases.
+    TreeMap: Maintains sorted order, slower performance, does not allow null keys, useful for maintaining sorted elements and performing range queries.
+
+Q10.Define LinkedHashMap in Java.
+Ans - 
+    LinkedHashMap in Java is a class that extends the HashMap class and implements the Map interface. It combines the features of a HashMap with a doubly-linked list to maintain the order of         insertion of its elements.
+
+    In short, LinkedHashMap:
+    
+    Maintains the insertion order of elements, allowing predictable iteration order.
+    Inherits the key-value mapping and retrieval behavior of HashMap.
+    Uses a hash table for fast access and a doubly-linked list to maintain the insertion order.
+    Provides O(1) time complexity for basic operations (add, remove, retrieve) in the average case.
+    Allows null keys and values.
+    Supports optional access ordering, where elements can be ordered based on their last access time.
+    Overall, LinkedHashMap offers the benefits of a hash table with predictable iteration order, making it useful in scenarios where both efficient access and ordered traversal of elements are     required.
