@@ -1,0 +1,4 @@
+Q1.What is the use of JDBC in java?
+Ans - 
+    JDBC (Java Database Connectivity) is a Java API that allows Java programs to interact with databases. It provides a set of classes and interfaces that enable developers to connect to a 
+    database, send queries, retrieve and manipulate data, and perform various database operations using Java.
