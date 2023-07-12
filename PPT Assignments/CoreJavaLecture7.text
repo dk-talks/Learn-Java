@@ -128,3 +128,97 @@ Ans -
 
 Q8.Explain the JSP Model-View-Controller (MVC) architecture.
 Ans - 
+    The JSP (JavaServer Pages) Model-View-Controller (MVC) architecture is a design pattern commonly used in web application development to separate the concerns of an application into three
+    distinct components: the Model, the View, and the Controller. Each component has a specific role within the architecture, promoting modularity, reusability, and maintainability. Here's
+    an explanation of each component:
+    
+    Model:
+    
+    The Model represents the application's data and business logic.
+    It encapsulates the data structures, database operations, and business rules of the application.
+    The Model component is responsible for retrieving and manipulating data, validating input, and implementing application-specific functionality.
+    It communicates with the Controller to handle data updates and retrieval.
+    View:
+    
+    The View represents the presentation layer of the application, responsible for displaying the user interface.
+    It includes the HTML, CSS, and JSP elements that define how the application's data is presented to the user.
+    The View is responsible for rendering the data from the Model and providing a user-friendly interface.
+    It communicates with the Controller to retrieve data from the Model and update the user interface accordingly.
+    Controller:
+    
+    The Controller acts as an intermediary between the Model and the View components.
+    It handles user input, performs appropriate actions, and controls the flow of the application.
+    The Controller receives user requests, interacts with the Model to update or retrieve data, and determines the appropriate View to render.
+    It encapsulates the application's business logic and orchestrates the communication between the Model and the View.
+    The interaction flow in the MVC architecture is as follows:
+    
+    The user interacts with the View by sending a request (e.g., submitting a form).
+    The Controller receives the request and processes it.
+    The Controller interacts with the Model to retrieve or update data.
+    The Controller selects the appropriate View to render based on the outcome of the request processing.
+    The View displays the data received from the Controller to the user.
+    The MVC architecture promotes separation of concerns, allowing for easier maintenance, code reuse, and testability. It provides a clear separation between data, presentation,
+    and application logic, enabling developers to work on different components independently. The use of JSP in the View layer simplifies the integration of dynamic content and 
+    server-side processing into the web application.
+
+
+Q9.What are some of the advantages of Servlets?
+Ans - 
+    Servlets offer several advantages for web application development. Here are some of the key advantages of using servlets:
+    
+    Platform Independence: Servlets are written in Java, making them platform-independent. They can run on any operating system and web server that supports the Java Virtual Machine (JVM),
+    providing great flexibility in deployment.
+    
+    Robust and Efficient: Servlets are part of the Java EE platform, which has a strong focus on reliability, scalability, and performance. Servlet containers, such as Apache Tomcat, provide
+    efficient handling of concurrent requests, making servlets suitable for high-traffic applications.
+    
+    Extensive API: Servlets have a rich and extensive API that provides powerful features for web application development. They offer capabilities for session management, cookie handling, 
+    URL rewriting, request and response filtering, and more.
+    
+    Reusability and Maintainability: Servlets promote code reuse and modular design. They can be organized into separate classes, making it easier to maintain and update specific 
+    functionality. Additionally, servlets can be easily integrated with other Java technologies, such as JSP, EJBs, and JDBC.
+    
+    Support for Different Protocols: While servlets are primarily used for handling HTTP requests and responses, they can also support other protocols, such as FTP, SMTP, and WebSocket. 
+    This flexibility allows developers to build applications that communicate using different protocols.
+    
+    Security: Servlets provide built-in mechanisms for implementing secure web applications. They support SSL/TLS encryption, access control, authentication, and other security features 
+    to protect sensitive data and ensure secure communication.
+    
+    Integration with Java Ecosystem: Servlets seamlessly integrate with the wider Java ecosystem. They can interact with databases through JDBC, access enterprise services through Java 
+    EE APIs (such as JNDI), and leverage Java libraries and frameworks to enhance application functionality.
+    
+    Scalability: Servlets can be easily scaled horizontally by deploying them across multiple servers to handle increasing application loads. Load balancers can distribute requests across
+    servlet instances, ensuring efficient utilization of resources.
+
+
+Q10.What are the limitations of JSP?
+Ans - 
+    While JSP (JavaServer Pages) is a powerful technology for building dynamic web pages and web applications, it also has some limitations that developers should be aware of. Here are some
+    of the limitations of JSP:
+    
+    Steep Learning Curve: JSP requires a good understanding of Java, Servlets, and web application development concepts. The learning curve can be steep for beginners who are new to Java 
+    and web programming.
+    
+    Mixing of Concerns: JSP can sometimes lead to a mixing of concerns, where business logic and presentation logic are combined within the JSP files. This can make the code less
+    maintainable and harder to test.
+    
+    Limited Separation of Concerns: While MVC (Model-View-Controller) can be implemented in JSP, it may not provide a clear separation of concerns by default. Developers need to be
+    careful to separate business logic from presentation logic to maintain a clean architecture.
+    
+    Limited Reusability: JSP pages can become tightly coupled with specific applications, making it difficult to reuse them in different contexts. This can impact code reusability 
+    and modularity.
+    
+    Performance Impact: JSP pages are compiled into servlets before execution, which can introduce a slight performance overhead during the initial compilation phase. However, 
+    subsequent requests benefit from the compiled servlets.
+    
+    Difficulties in Version Control: JSP files are often a combination of HTML, Java code, and JSP tags, which can make it challenging to manage version control effectively.
+    Conflicts can arise when multiple developers work on the same JSP file simultaneously.
+    
+    Debugging Complexity: Debugging JSP pages can be more complex than debugging regular Java code. Errors in JSPs can be harder to trace due to the mixing of HTML and Java code, 
+    making it challenging to identify and fix issues.
+    
+    Limited Template Engine Features: While JSP provides templating capabilities, it lacks some advanced features found in dedicated template engines. These features include layout 
+    inheritance, custom tags, and more extensive template management.
+    
+    Integration Complexity: Integrating JSP with other technologies and frameworks might introduce additional complexities, especially if there are compatibility issues or conflicts 
+    with different versions of Java or web containers.
