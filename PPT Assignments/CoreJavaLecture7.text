@@ -1,0 +1,130 @@
+Q1.What is the use of JDBC in java?
+Ans - 
+    JDBC (Java Database Connectivity) is a Java API that allows Java programs to interact with databases. It provides a set of classes and interfaces that enable developers to connect to a 
+    database, send queries, retrieve and manipulate data, and perform various database operations using Java.
+
+Q2.What are the steps involved in JDBC?
+Ans - 
+
+    JDBC (Java Database Connectivity) is a Java API that provides a standard way to interact with relational databases. It allows Java programs to execute SQL statements and perform database 
+    operations. The steps involved in using JDBC are as follows:
+    
+    Load the JDBC driver: First, you need to load the JDBC driver specific to the database you want to connect to. The driver is typically provided as a JAR file that contains the implementation
+    classes required to communicate with the database.
+    
+    Establish a database connection: Use the JDBC driver's DriverManager class to establish a connection to the database. You need to provide the database URL, username, and password to connect.
+    The URL format varies depending on the database and the driver being used.
+    
+    Create a statement: Once the connection is established, you can create a Statement object from the connection. The Statement object allows you to execute SQL queries and statements against 
+    the database.
+    
+    Execute SQL queries: Use the executeQuery() method of the Statement object to execute SQL SELECT queries that retrieve data from the database. The method returns a ResultSet object that 
+    contains the query results.
+    
+    Process the query results: Use methods provided by the ResultSet object to navigate through the query results and retrieve data. You can use methods like next(), getString(), getInt(), 
+    etc., to retrieve data from the current row of the result set.
+    
+    Execute SQL updates: For SQL statements that modify the database, such as INSERT, UPDATE, or DELETE statements, use the executeUpdate() method of the Statement object. It returns the 
+    number of rows affected by the update.
+    
+    Handle exceptions: JDBC methods can throw SQLException if there are any errors during database operations. It is important to handle these exceptions appropriately, either by catching
+    them or declaring them to be thrown.
+    
+    Close resources: After you have finished working with the database, close the ResultSet, Statement, and Connection objects to release any database resources they hold. This is done 
+    using the close() method.
+
+
+Q3.What are the types of statement in JDBC in java?
+Ans - 
+    Statement: The simplest type of statement in JDBC used for executing static SQL queries and statements without parameters.
+    
+    PreparedStatement: An extension of Statement that allows executing parameterized SQL queries efficiently. It prevents SQL injection attacks and improves performance when executing the
+    same statement with different parameter values.
+    
+    CallableStatement: Used for executing stored procedures or functions in the database. It supports named or positional parameters and allows registering output parameters to retrieve 
+    values returned by the procedure.
+    
+    These three types of statements provide different functionalities and can be used based on specific requirements when interacting with databases using JDBC.
+
+Q4.What is Servlet in Java?
+Ans - 
+    A Servlet in Java is a Java class that extends the functionality of a web server or container. It handles HTTP requests from clients, processes them, and generates dynamic web content
+    as a response. Servlets are used to build web applications and provide features such as session management, database access, and concurrent request handling. They follow a lifecycle and 
+    are deployed within a web container.
+
+Q5.Explain the life Cycle of servlet?
+Ans - 
+    The life cycle of a servlet in Java consists of several phases that occur from its initialization to its destruction. These phases define the behavior and execution flow of a servlet.
+    The life cycle of a servlet can be summarized as follows:
+    
+    Loading and Initialization: When a web container starts or a request is received for a servlet, the container loads the servlet class into memory. The init() method of the servlet is 
+    called by the container to initialize the servlet. This method is typically used to perform one-time setup tasks, such as opening a database connection or loading configuration data.
+    The init() method is invoked only once during the entire life cycle of the servlet.
+    
+    Request Handling: After initialization, the servlet is ready to handle client requests. Whenever a request is received for the servlet, the container invokes the service() method. The 
+    service() method examines the type of request (GET, POST, etc.) and calls the appropriate method (doGet(), doPost(), etc.) to handle the request. The service() method is called for each 
+    request, and it can be overridden to provide custom request handling logic.
+    
+    Request Processing: The doGet(), doPost(), and other request-specific methods are responsible for processing the request and generating a response. These methods extract request 
+    parameters, read input data, perform business logic, and generate dynamic content. They are invoked by the service() method based on the type of HTTP request.
+    
+    Response Generation: Once the request processing is completed, the servlet generates a response to send back to the client. The response can include HTML, XML, JSON, or any other
+    type of data. The servlet sets the response headers, writes the response content, and optionally redirects or forwards the request to another resource.
+    
+    Destruction: At some point, the web container may decide to unload the servlet, such as when the container is shutting down or the servlet is being replaced. Before the servlet is unloaded, 
+    the container calls the destroy() method. The destroy() method is used to release any resources held by the servlet, such as closing database connections or releasing file handles. Like init(), the destroy() method is called only once during the entire life cycle of the servlet.
+
+    It's important to note that the init(), service(), and destroy() methods are provided by the GenericServlet class or the HttpServlet class, which are the base classes for servlets.
+    Servlet developers can override these methods to implement custom behavior as needed.
+
+    Overall, the life cycle of a servlet involves loading and initialization, request handling, request processing, response generation, and eventually destruction. The web container 
+    manages the life cycle of the servlet and ensures that requests are properly handled and resources are appropriately managed.
+
+
+Q6.Explain the difference between the RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods?
+Ans - 
+    The RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods are both used in Java servlets to redirect the request from one resource to another. However, 
+    they differ in how the redirection is performed and the behavior that follows. Here's a breakdown of the differences:
+    
+    RequestDispatcher.forward():
+    
+    This method performs an internal server-side redirection. It allows the servlet to transfer control to another resource (servlet, JSP, or HTML file) on the server without the client's 
+    involvement.
+    The request and response objects remain the same throughout the redirection process.
+    The URL displayed in the client's browser does not change, as the redirection happens internally on the server.
+    It is useful for implementing dispatching or forwarding control to other servlets or resources within the same web application.
+    The method signature: void forward(ServletRequest request, ServletResponse response)
+    HttpServletResponse.sendRedirect():
+    
+    This method performs an external client-side redirection. It instructs the client's browser to send a new request to a different URL.
+    The client's browser receives an HTTP 302 response and initiates a new request to the specified URL.
+    The request and response objects are different between the initial request and the redirected request.
+    The URL displayed in the client's browser changes to the new URL.
+    It is useful for redirecting the client to a different web application, an external URL, or a different domain.
+    The method signature: void sendRedirect(String location)
+
+
+Q7.What is the purpose of the doGet() and doPost() methods in a servlet?
+Ans - 
+    The doGet() and doPost() methods in a servlet serve different purposes based on the type of HTTP request being handled.
+    
+    doGet():
+    
+    The doGet() method is used to handle HTTP GET requests.
+    It is called by the container when a client sends an HTTP GET request to the servlet.
+    The doGet() method is typically used to retrieve data or perform read-only operations.
+    It can extract request parameters from the URL query string or from the request headers.
+    The response generated by doGet() is sent back to the client with the requested data.
+    doPost():
+    
+    The doPost() method is used to handle HTTP POST requests.
+    It is called by the container when a client sends an HTTP POST request to the servlet.
+    The doPost() method is typically used to submit data to the server or perform write/update operations.
+    It can extract request parameters from the request body, which may contain form data or other content.
+    The response generated by doPost() is sent back to the client with the result of the server-side operation.
+    Both doGet() and doPost() are HTTP request-specific methods defined in the HttpServlet class, which is the base class for servlets handling HTTP requests.
+    It's important to note that the doGet() and doPost() methods can be overridden in a servlet to implement custom request handling logic.
+
+
+Q8.Explain the JSP Model-View-Controller (MVC) architecture.
+Ans - 
