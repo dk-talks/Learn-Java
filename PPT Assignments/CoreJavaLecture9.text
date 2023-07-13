@@ -1,0 +1,26 @@
+Q1. What is the Spring Framework?
+Answer: The Spring Framework is a popular open-source Java framework that provides a comprehensive infrastructure for developing enterprise-level applications. It offers a modular architecture
+        and a wide range of features and tools to simplify application development, such as dependency injection, aspect-oriented programming, transaction management, and support for various other 
+        frameworks and technologies.
+
+
+
+Q2. What are the features of the Spring Framework?
+Answer: The Spring Framework offers a plethora of features, including:
+
+        Inversion of Control (IoC): The framework's core principle is IoC, which allows for loose coupling between components and promotes modular and flexible application design.
+        
+        Aspect-Oriented Programming (AOP): Spring supports AOP, enabling the separation of cross-cutting concerns and providing a way to address common functionalities such as logging, security, 
+        and transaction management.
+        
+        Transaction Management: Spring provides a powerful and consistent API for managing database transactions across various data access technologies, including JDBC, JPA, and Hibernate.
+        
+        MVC Framework: Spring MVC is a robust web framework that follows the Model-View-Controller architectural pattern, making it easy to develop web applications with clean separation of concerns.
+        
+        Integration with Other Technologies: Spring seamlessly integrates with popular frameworks and technologies such as Hibernate, JPA, JMS, Quartz, and more, providing a unified platform for 
+        application development.
+        
+        Testing Support: Spring offers comprehensive support for unit and integration testing, allowing developers to write test cases for their code easily.
+
+
+        
