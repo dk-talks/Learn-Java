@@ -1,0 +1,59 @@
+Q1. What is the Spring MVC framework?
+A1. The Spring MVC (Model-View-Controller) framework is a popular Java-based web framework that follows the MVC architectural pattern. It provides a structured way to build web applications 
+    by separating the application logic into three components: the model (data), the view (presentation), and the controller (handling requests and managing flow).
+
+
+
+Q2. What are the benefits of the Spring MVC framework over other MVC frameworks?
+A2. The Spring MVC framework offers several benefits compared to other MVC frameworks:
+  Lightweight: The framework is lightweight and does not impose any specific architectural constraints, allowing flexibility in designing applications.
+  Inversion of Control (IoC): Spring's IoC container enables loose coupling, dependency injection, and easier unit testing.
+  Integration with other Spring modules: It seamlessly integrates with other Spring modules such as Spring Security, Spring Data, and Spring Boot.
+  Extensibility: The framework provides various extension points and allows easy integration of third-party libraries.
+  Robustness: Spring MVC offers robust error handling, validation, and data binding capabilities.
+  Testability: It promotes test-driven development (TDD) by supporting easy unit testing of controllers and other components.
+
+
+
+Q3. What is the DispatcherServlet in Spring MVC? In other words, can you explain the Spring MVC architecture?
+A3. The DispatcherServlet is a central component of the Spring MVC framework. It acts as the front controller that receives all incoming requests and dispatches them to appropriate handlers 
+    (controllers) based on the request URL or other criteria. The Spring MVC architecture can be explained as follows:
+
+    Client sends a request: A client (usually a web browser) sends an HTTP request to the application.
+    
+    DispatcherServlet receives the request: The DispatcherServlet intercepts the request and becomes the entry point for the request processing.
+    
+    HandlerMapping resolves the request: The DispatcherServlet consults the configured HandlerMapping to determine the appropriate handler (controller) for the request.
+    
+    Handler (Controller) processes the request: The selected handler (controller) processes the request by executing business logic, accessing models, and preparing a response.
+    
+    HandlerAdapter invokes the handler: The HandlerAdapter invokes the selected handler and provides necessary data to process the request.
+    
+    Handler returns a ModelAndView: The handler returns a ModelAndView object that encapsulates the model (data) and the logical view name.
+    
+    ViewResolver resolves the view: The DispatcherServlet consults the configured ViewResolver to determine the actual View implementation for the logical view name.
+    
+    View renders the response: The selected View renders the model data and produces the response (HTML, JSON, XML, etc.) to be sent back to the client.
+    
+    DispatcherServlet returns the response: The DispatcherServlet sends the response back to the client for display or further processing.
+
+
+
+Q4. What is a View Resolver pattern, and explain its significance in Spring MVC?
+A4. The View Resolver pattern is a design pattern used in Spring MVC to resolve the logical view name returned by a controller into an actual View implementation. The significance of a
+    View Resolver in Spring MVC is as follows:
+
+    Decoupling of logical view names: Controllers in Spring MVC return logical view names instead of specifying a concrete view. The View Resolver maps these logical names to actual views, allowing the flexibility to change the view technology or presentation layer without modifying the controllers.
+    
+    Dynamic view resolution: View Resolvers can dynamically determine the appropriate view implementation based on factors such as the user's device, locale, or other application-specific criteria.
+    
+    View customization: View Resolvers can apply pre-processing or post-processing logic to the resolved view, allowing customization of the rendering process.
+
+Q5. What are the differences between @RequestParam and @PathVariable annotations?
+A5. The differences between @RequestParam and @PathVariable annotations in Spring MVC are as follows:
+
+    @RequestParam: It is used to extract query parameters or form data from the request URL. The parameters are typically specified as part of the URL query string (e.g., ?param1=value1&param2=value2). It is optional unless explicitly specified, and the parameter values are bound to method parameters.
+    
+    @PathVariable: It is used to extract dynamic values from the request URL path. The values are specified as placeholders within the URL path itself (e.g., /users/{id}). It is required, and the parameter values are bound to method parameters.
+    
+    In summary, @RequestParam extracts parameters from the request URL query string, while @PathVariable extracts values from the URL path.
