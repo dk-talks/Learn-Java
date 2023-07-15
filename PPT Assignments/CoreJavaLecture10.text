@@ -57,3 +57,38 @@ A5. The differences between @RequestParam and @PathVariable annotations in Sprin
     @PathVariable: It is used to extract dynamic values from the request URL path. The values are specified as placeholders within the URL path itself (e.g., /users/{id}). It is required, and the parameter values are bound to method parameters.
     
     In summary, @RequestParam extracts parameters from the request URL query string, while @PathVariable extracts values from the URL path.
+
+
+
+Q6. What is the Model in Spring MVC?
+A6. In Spring MVC, the Model represents the data or state of the application that is used by the view for rendering. It encapsulates the application data and provides methods to access and 
+    manipulate that data. The Model is typically passed from the controller to the view, allowing the view to display the data to the user.
+
+Q7. What is the role of @ModelAttribute annotation?
+A7. The @ModelAttribute annotation in Spring MVC is used to bind request parameters to model attributes. It can be applied to method parameters or method return types. When applied to a 
+    method parameter, it binds the corresponding request parameter value to the annotated parameter. When applied to a method return type, it adds the annotated object to the model, making it 
+    available to the view for rendering.
+
+Q8. What is the significance of the @Repository annotation?
+A8. The @Repository annotation is a specialization of the @Component annotation in the Spring framework. It is used to indicate that a class is a repository or a data access object (DAO).
+    The significance of @Repository is primarily for the purpose of component scanning, automatic bean detection, and exception translation. It helps in organizing and identifying the persistence
+    layer of an application, allowing easier integration with Spring's data access technologies, such as JDBC, Hibernate, or JPA.
+
+Q9. What does REST stand for? What are RESTful web services?
+A9. REST stands for Representational State Transfer. RESTful web services are architectural principles for designing networked applications that communicate over the HTTP protocol.
+    It emphasizes a stateless client-server communication model where resources (e.g., data entities) are identified by unique URLs and can be accessed, manipulated, and represented in different
+    formats (e.g., JSON, XML) using standard HTTP methods (e.g., GET, POST, PUT, DELETE). RESTful web services promote scalability, simplicity, and interoperability between different systems.
+
+Q10. What are the differences between RESTful web services and SOAP web services?
+A10. The differences between RESTful web services and SOAP (Simple Object Access Protocol) web services are as follows:
+
+    Communication Protocol: RESTful web services use lightweight protocols such as HTTP, whereas SOAP web services use XML-based protocols over various communication protocols such as HTTP,
+    SMTP, or TCP.
+    
+    Message Format: RESTful web services commonly use JSON or XML for data representation, while SOAP web services exclusively use XML for both request and response messages.
+    
+    Service Definition: RESTful web services often rely on well-defined URLs (Uniform Resource Locators) and follow resource-oriented patterns, whereas SOAP web services rely on Web Services Description Language (WSDL) for defining the interface and operations.
+    
+    Statelessness: RESTful web services are inherently stateless, meaning each request is independent and does not rely on previous interactions. SOAP web services can be stateful, maintaining session information and requiring more overhead for handling state.
+    
+    Flexibility: RESTful web services provide a flexible and lightweight approach, suitable for simple scenarios. SOAP web services
