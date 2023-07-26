@@ -200,6 +200,75 @@ public class DSALecture9 {
 
     }
 
+    // Question 6 - 278. First Bad Version
+
+    public int firstBadVersion(int n) {
+        int start = 1;
+        int end = n;
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            if(isBadVersion(mid) == false){
+                start = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return start;
+    }
+
+
+    // Question 7 - Inversion count in Array using Merge Sort
+
+    static int getInvCount(int n)
+    {
+        int inv_count = 0;
+        for (int i = 0; i < n - 1; i++)
+            for (int j = i + 1; j < n; j++)
+                if (arr[i] > arr[j])
+                    inv_count++;
+ 
+        return inv_count;
+    }
+
+
+
+    // Question 8 - Find common elements in three sorted arrays
+
+    void findCommon(int ar1[], int ar2[], int ar3[])
+    {
+        // Initialize starting indexes for ar1[], ar2[] and
+        // ar3[]
+        int i = 0, j = 0, k = 0;
+ 
+        // Iterate through three arrays while all arrays
+        // have elements
+        while (i < ar1.length && j < ar2.length
+               && k < ar3.length) {
+            // If x = y and y = z, print any of them and
+            // move ahead in all arrays
+            if (ar1[i] == ar2[j] && ar2[j] == ar3[k]) {
+                System.out.print(ar1[i] + " ");
+                i++;
+                j++;
+                k++;
+            }
+ 
+            // x < y
+            else if (ar1[i] < ar2[j])
+                i++;
+ 
+            // y < z
+            else if (ar2[j] < ar3[k])
+                j++;
+ 
+            // We reach here when x > y and z < y, i.e., z
+            // is smallest
+            else
+                k++;
+        }
+    }
+
+
 
     
 
