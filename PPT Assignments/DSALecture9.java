@@ -95,5 +95,64 @@ public class DSALecture9 {
 
     // Question 3 - 162. Find Peak Element
 
+    // brute force aproach
+
+    public int findPeakElement(int[] nums) {
+
+        int peakElement = 0;
+
+        if(nums.length == 1) {
+            return 0;
+        }
+
+        for(int i = 0; i<nums.length; i++) {
+            if(i>0 && nums[i] > nums[i-1]) {
+                // left side is smaller, check right side
+                if(i<nums.length-1) {
+                    // these are other elements remaining
+                    if(nums[i] > nums[i+1]) {
+                        return i;
+                    }
+                } else {
+                    // i is the last element, i is the ansesr
+                    return i;
+                }
+
+            }
+        }
+        return peakElement;
+        
+    }
+
+    // optimized approach using binary search
+
+    public int findPeakElement(int[] nums) {
+
+        // using binary search
+        // implementing binary search does not necessarily need sorted array, we just have to change the scenario how will it be implemented, and the time complexity wiill remain same o(log n)
+
+        int start = 0;
+        int end = nums.length-1;
+
+        while(start < end) {
+            int mid = start + (end - start)/2;
+
+            if(nums[mid] < nums[mid+1]) {
+                // mid+1 can be our potential answer
+                start = mid+1;
+            } else {
+                // mid can be our potential answer, or the left side of array
+                end = mid;
+            }
+        }
+
+        // at some point, staart and end will be same, our answer is both start & end
+        return start;
+        
+    }
+
+
+    
+
   
 }
