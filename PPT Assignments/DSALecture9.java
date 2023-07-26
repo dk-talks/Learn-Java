@@ -152,6 +152,55 @@ public class DSALecture9 {
     }
 
 
+    // Question 4 - 35. Search Insert Position
+
+    public int searchInsert(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length-1;
+
+        while(start <= end) {
+            int mid = start + (end - start)/2;
+            if(nums[mid] == target) {
+                return mid;
+            } else if(nums[mid] < target) {
+                start = mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+
+        // if target not found, it would be placed at start position 
+        return start;
+    }
+
+
+    // Question 5 - 169 - Majority Element
+
+    public int majorityElement(int[] nums) {
+        
+        Arrays.sort(nums);
+        
+        int largestFreq = 0;
+        int majorityElement = nums[0];
+
+        for(int i = 0; i<nums.length; i++) {
+            int currFreq = 0;
+            while(i<nums.length-1 && nums[i] == nums[i+1]) {
+                currFreq++;
+                i++;
+            }
+            if(currFreq > largestFreq) {
+                largestFreq = currFreq;
+                majorityElement = nums[i];
+            }
+
+        }
+
+        return majorityElement;
+
+    }
+
+
     
 
   
